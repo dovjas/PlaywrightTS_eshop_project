@@ -1,0 +1,19 @@
+{
+  "name": "playwrightts_eshop",
+  "version": "1.0.0",
+  "description": "Playwight TS eshop project",
+  "main": "index.js",
+  "scripts": {
+    "test:signup":"npx playwright test --grep @signup --headed"
+  },
+  "keywords": [
+    "pw",
+    "ts"
+  ],
+  "author": "DJ",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}
