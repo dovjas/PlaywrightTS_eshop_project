@@ -18,7 +18,7 @@ export interface NewUserData {
 
 export class SignupFormPage {
   page: Page;
-  headerTxt:Locator;
+  headerTxt: Locator;
   titleMrRadio: Locator;
   titleMrsRadio: Locator;
   passwordInput: Locator;
@@ -73,7 +73,7 @@ export class SignupFormPage {
 
     // Date of Birth
     if (userData.dobDay)
-      await this.dateOfBirthDaySel.selectOption({label:userData.dobDay});
+      await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
     if (userData.dobMonth)
       await this.dateOfBirthMonthSel.selectOption({ label: userData.dobMonth });
     if (userData.dobYear)
@@ -89,7 +89,7 @@ export class SignupFormPage {
     await this.addressInput.fill(userData.address);
 
     // Address
-    await this.countrySel.selectOption({label:userData.country})
+    await this.countrySel.selectOption({ label: userData.country });
     if (userData.state) await this.stateInput.fill(userData.state);
     if (userData.city) await this.cityInput.fill(userData.city);
     await this.zipCodeInput.fill(userData.zipCode);
