@@ -14,7 +14,9 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   const email = `email+${Date.now()}+@test.com`
 
   // Step 1: Go to Home Page
-  await homePage.navigate('/');
+  await test.step('1. Navigate to Home Page', async () => {
+    await homePage.navigate('/');
+  });
 
   // Step 2: Go to Signup/Login page
   await homePage.goToSignupLogin();
