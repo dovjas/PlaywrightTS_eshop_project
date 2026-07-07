@@ -13,6 +13,7 @@ export abstract class BasePage{
 
     async navigate():Promise<void>{
         await this.page.goto(this.baseUrl);
+        await this.acceptConsentIfPresent();
     }
 
     async acceptConsentIfPresent(){

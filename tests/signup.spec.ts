@@ -8,7 +8,6 @@ import { testUser } from '../testData/users.ts';
 
 test('Test Case 1: Register User @signup', async ({ page }) => {
   const homePage = new HomePage(page);
-  // const basePage = new BasePage(page);
   const signupLoginPage = new SignupLoginPage(page);
   const signupFormPage = new SignupFormPage(page);
   const accountCreatedPage = new AccountCreatedPage(page);
@@ -16,7 +15,6 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
 
   // Step 1: Go to Home Page
   await homePage.navigate();
-  await homePage.acceptConsentIfPresent();
 
   // Step 2: Go to Signup/Login page
   await homePage.goToSignupLogin();
