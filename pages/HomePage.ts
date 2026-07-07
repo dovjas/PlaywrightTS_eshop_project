@@ -20,9 +20,7 @@ export class HomePage extends BasePage {
   }
 
   async goToSignupLogin() {
-    console.log('Attempting to click Signup/Login button');
     await this.signupLoginBtn.click();
-    console.log('Clicked Signup/Login button');
   }
 
   async deleteAccount(){
