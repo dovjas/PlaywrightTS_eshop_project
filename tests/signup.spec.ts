@@ -18,8 +18,11 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
     await homePage.navigate('/');
   });
 
-  // Step 2: Go to Signup/Login page
-  await homePage.goToSignupLogin();
+  // Step 2: Go to Signup/Login page (ensure button visible first)
+  await test.step('2. Go to Signup/Login page', async () => {
+    await expect(homePage.signupLoginBtn).toBeVisible({ timeout: 10000 });
+    await homePage.goToSignupLogin();
+  });
 
   // Step 3: Verify 'New User Signup!' is visible
   expect(await signupLoginPage.headerText.textContent()).toContain(
