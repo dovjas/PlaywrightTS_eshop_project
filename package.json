@@ -4,7 +4,7 @@
   "description": "Playwight TS eshop project",
   "main": "index.js",
   "scripts": {
-    "test:signup":"npx playwright test --grep @signup --headed"
+    "test:signup":"npx playwright test --grep @signup"
   },
   "keywords": [
     "pw",

@@ -1,21 +1,24 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from './base/BasePage.ts';
 
-export class HomePage {
-  //locators
+export class HomePage extends BasePage {
+
   readonly page: Page;
   readonly signupLoginBtn: Locator;
   readonly loggedInAsTxt: Locator;
   readonly deleteAccBtn:Locator;
-  readonly accDeletedTxt:Locator
-  //constructor
+  readonly accDeletedTxt:Locator;
+
   constructor(page: Page) {
+    super(page)
+
     this.page = page;
     this.signupLoginBtn = page.getByRole('link', { name: /Signup \/ Login/i });
     this.loggedInAsTxt = page.locator('li b').last();
     this.deleteAccBtn = page.locator('li:has-text(" Delete Account")');
     this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
   }
-  //actions
+
   async goToSignupLogin() {
     await this.signupLoginBtn.click();
   }

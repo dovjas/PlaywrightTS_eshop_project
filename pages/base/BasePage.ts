@@ -1,17 +1,16 @@
 import { Page, Locator } from '@playwright/test'
 
-export class BasePage{
-    page:Page;
-    baseUrl:string;
-    consentBtn:Locator;
-    //locators
-    //constructor
+export abstract class BasePage{
+    protected page:Page;
+    readonly baseUrl:string;
+    readonly consentBtn:Locator;
+
     constructor(page:Page){
         this.page = page;
         this.baseUrl = 'https://www.automationexercise.com/';
         this.consentBtn = page.getByRole('button',{name:"Consent"});
     }
-    //actions
+
     async navigate():Promise<void>{
         await this.page.goto(this.baseUrl);
     }
@@ -24,7 +23,4 @@ export class BasePage{
             console.log('Consent banner not present or already accepted');
         }
     }
-
-
-
 }
