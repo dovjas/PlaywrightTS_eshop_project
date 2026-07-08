@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage.ts';
-import { BasePage } from '../pages/base/BasePage.ts';
 import { SignupLoginPage } from '../pages/auth/SignupLoginPage.ts';
 import { SignupFormPage } from '../pages/auth/SignupFormPage.ts';
 import { AccountCreatedPage } from '../pages/auth/AccountCreatedPage.ts';
@@ -16,7 +15,7 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   // Step 1: Go to Home Page
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
-    
+
   // Verify that home page is visible successfully
     await expect(page).toHaveURL(/automationexercise.com/);
     const count =await homePage.productCards.count()
