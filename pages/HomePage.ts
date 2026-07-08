@@ -8,6 +8,7 @@ export class HomePage extends BasePage {
   readonly loggedInAsTxt: Locator;
   readonly deleteAccBtn:Locator;
   readonly accDeletedTxt:Locator;
+  readonly productCards:Locator;
 
   constructor(page: Page) {
     super(page)
@@ -17,6 +18,7 @@ export class HomePage extends BasePage {
     this.loggedInAsTxt = page.locator('li b').last();
     this.deleteAccBtn = page.locator('li:has-text(" Delete Account")');
     this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
+    this.productCards = page.locator('.single-products');
   }
 
   async goToSignupLogin() {
