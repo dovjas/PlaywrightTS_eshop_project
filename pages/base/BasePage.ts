@@ -13,7 +13,22 @@ export abstract class BasePage {
 
   async navigate(path: string = '/'): Promise<void> {
     const url = path.startsWith('http') ? path : `${this.baseUrl}${path}`;
-    console.log('URL IS THIS', url)
+    console.log('URL IS THIS', url);
+    this.page.on('close', () => {
+      console.log('PAGE CLOSED');
+    });
+
+    this.page.on('crash', () => {
+      console.log('PAGE CRASHED');
+    });
+
+    this.page.on('pageerror', (error) => {
+      console.log('PAGE ERROR:', error);
+    });
+
+    this.page.on('requestfailed', (request) => {
+      console.log('FAILED:', request.url(), request.failure()?.errorText);
+    });
     await this.page.goto(url, { waitUntil: 'domcontentloaded' });
     await this.acceptConsentIfPresent();
   }
