@@ -10,16 +10,16 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   const signupLoginPage = new SignupLoginPage(page);
   const signupFormPage = new SignupFormPage(page);
   const accountCreatedPage = new AccountCreatedPage(page);
-  const email = `email+${Date.now()}+@test.com`
+  const email = `email+${Date.now()}+@test.com`;
 
   // Step 1: Go to Home Page
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
-
-  // Verify that home page is visible successfully
+    await homePage.acceptConsentIfPresent();
+    // Verify that home page is visible successfully
     await expect(page).toHaveURL(/automationexercise.com/);
-    const count =await homePage.productCards.count()
-    await expect(count).toBeGreaterThan(0)
+    const count = await homePage.productCards.count();
+    await expect(count).toBeGreaterThan(0);
   });
 
   // Step 2: Go to Signup/Login page
@@ -49,7 +49,6 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   // Step 8: Verify that 'Logged in as username' is visible
   await expect(homePage.loggedInAsTxt).toBeVisible();
 
-  
   // Step 9: Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
   await homePage.deleteAccount();
   expect(await homePage.accDeletedTxt.textContent()).toContain(

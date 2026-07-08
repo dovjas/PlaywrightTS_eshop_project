@@ -14,8 +14,6 @@ export abstract class BasePage {
   async navigate(path: string = '/'): Promise<void> {
     const url = path.startsWith('http') ? path : `${this.baseUrl}${path}`;
     await this.page.goto(url, { waitUntil: 'domcontentloaded' });
-    // await this.acceptConsentIfPresent();
-
   }
 
   async acceptConsentIfPresent() {
