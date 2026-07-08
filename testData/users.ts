@@ -1,8 +1,9 @@
 import { NewUserData } from '../pages/auth/SignupFormPage.ts';
 
 
-export const testUser ={
-title: 'Mr' ,
+export const testUser = {
+  email: `email+${Date.now()}+@test.com`,
+  title: 'Mr',
   password: 'Labas11',
   dobDay: '9',
   dobMonth: 'April',
@@ -15,4 +16,4 @@ title: 'Mr' ,
   city: 'Deli',
   zipCode: '1441',
   mobileNumber: '0420012889',
-}as NewUserData;
+} as NewUserData;

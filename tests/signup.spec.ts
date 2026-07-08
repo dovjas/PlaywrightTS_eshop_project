@@ -10,12 +10,12 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   const signupLoginPage = new SignupLoginPage(page);
   const signupFormPage = new SignupFormPage(page);
   const accountCreatedPage = new AccountCreatedPage(page);
-  const email = `email+${Date.now()}+@test.com`;
 
   // Step 1: Go to Home Page
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
     await homePage.acceptConsentIfPresent();
+    
     // Verify that home page is visible successfully
     await expect(page).toHaveURL(/automationexercise.com/);
     const count = await homePage.productCards.count();
@@ -30,7 +30,7 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
     'New User Signup!',
   );
   // Step 4: Enter Name and Email
-  await signupLoginPage.newUserSignup('Jonas', email);
+  await signupLoginPage.newUserSignup(testUser.firstName, testUser.email);
 
   // Step 5: Verify that 'ENTER ACCOUNT INFORMATION' is visible
   expect(await signupFormPage.headerTxt.textContent()).toContain(

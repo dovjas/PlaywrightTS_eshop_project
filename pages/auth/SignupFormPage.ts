@@ -1,6 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
 export interface NewUserData {
+  email:string,
   title?: 'Mr' | 'Mrs';
   password: string;
   dobDay?: string;
