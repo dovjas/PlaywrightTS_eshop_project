@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import {BasePage} from '../base/BasePage'
 
 export interface NewUserData {
   email:string,
@@ -17,29 +18,29 @@ export interface NewUserData {
   mobileNumber: string;
 }
 
-export class SignupFormPage {
-  page: Page;
-  headerTxt: Locator;
-  titleMrRadio: Locator;
-  titleMrsRadio: Locator;
-  passwordInput: Locator;
-  dateOfBirthDaySel: Locator;
-  dateOfBirthMonthSel: Locator;
-  dateOfBirthYearSel: Locator;
-  newsletterCbox: Locator;
-  specOffersCbox: Locator;
-  firstNameInput: Locator;
-  lastNameInput: Locator;
-  addressInput: Locator;
-  countrySel: Locator;
-  stateInput: Locator;
-  cityInput: Locator;
-  zipCodeInput: Locator;
-  mobileNumbInput: Locator;
-  createAccountBtn: Locator;
+export class SignupFormPage extends BasePage {
+  readonly  headerTxt: Locator;
+  readonly  titleMrRadio: Locator;
+  readonly  titleMrsRadio: Locator;
+  readonly  passwordInput: Locator;
+  readonly  dateOfBirthDaySel: Locator;
+  readonly  dateOfBirthMonthSel: Locator;
+  readonly  dateOfBirthYearSel: Locator;
+  readonly  newsletterCbox: Locator;
+  readonly  specOffersCbox: Locator;
+  readonly  firstNameInput: Locator;
+  readonly  lastNameInput: Locator;
+  readonly  addressInput: Locator;
+  readonly countrySel: Locator;
+  readonly  stateInput: Locator;
+  readonly  cityInput: Locator;
+  readonly  zipCodeInput: Locator;
+  readonly  mobileNumbInput: Locator;
+  readonly  createAccountBtn: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page)
+    
     this.headerTxt = page.locator('.login-form h2').first();
     this.titleMrRadio = page.locator('#id_gender1');
     this.titleMrsRadio = page.locator('#id_gender2');
