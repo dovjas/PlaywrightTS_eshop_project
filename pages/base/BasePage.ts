@@ -30,10 +30,11 @@ export abstract class BasePage {
 
   async acceptConsentIfPresent() {
     try {
+      await this.consentBtn.waitFor({ state: 'visible', timeout: 8000 });
       await this.consentBtn.click();
       console.log('Consent banner accepted successfully');
-    } catch (err) {
-      console.log('Consent banner not present or already accepted');
+    } catch {
+      console.log('No consent banner found or already accepted');
     }
   }
 }
