@@ -26,7 +26,7 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   await homePage.goToSignupLogin();
 
   // Step 3: Verify 'New User Signup!' is visible
-  expect(await signupLoginPage.headerText.textContent()).toContain(
+  expect(await signupLoginPage.headerTxt.textContent()).toContain(
     'New User Signup!',
   );
   // Step 4: Enter Name and Email
