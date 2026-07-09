@@ -14,7 +14,7 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   // Step 1: Go to Home Page
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
-    await homePage.acceptConsentIfPresent();
+    // await homePage.acceptConsentIfPresent();
     
     // Verify that home page is visible successfully
     await expect(page).toHaveURL(/automationexercise.com/);
