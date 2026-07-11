@@ -24,30 +24,30 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
 
   // Step 2: Go to Signup/Login page
   await homePage.goToSignupLogin();
-
   // Step 3: Verify 'New User Signup!' is visible
   expect(await signupLoginPage.headerTxt.textContent()).toContain(
     'New User Signup!',
   );
   // Step 4: Enter Name and Email
   await signupLoginPage.newUserSignup(testUser.firstName, testUser.email);
-
+  
   // Step 5: Verify that 'ENTER ACCOUNT INFORMATION' is visible
   expect(await signupFormPage.headerTxt.textContent()).toContain(
     'Enter Account Information',
   );
-
+  
   // Step 6: Fill full registration form
   await signupFormPage.completeRegistration(testUser);
-
+  
   // Step 7: Verify that 'ACCOUNT CREATED!' is visible
   expect(await accountCreatedPage.accountCreatedTxt.innerText()).toContain(
     'ACCOUNT CREATED!',
   );
   await accountCreatedPage.clickContinue();
-
+  
   // Step 8: Verify that 'Logged in as username' is visible
   await expect(homePage.loggedInAsTxt).toBeVisible();
+  await expect(homePage.loggedInAsTxt).toContainText(testUser.firstName)
 
   // Step 9: Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
   await homePage.deleteAccount();
