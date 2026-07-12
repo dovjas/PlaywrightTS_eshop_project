@@ -11,47 +11,56 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   const signupFormPage = new SignupFormPage(page);
   const accountCreatedPage = new AccountCreatedPage(page);
 
-  // Step 1: Go to Home Page
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
-    // await homePage.acceptConsentIfPresent();
-    
-    // Verify that home page is visible successfully
+  });
+
+  await test.step('2. Verify that home page is visible successfully', async () => {
     await expect(page).toHaveURL(/automationexercise.com/);
     const count = await homePage.productCards.count();
     await expect(count).toBeGreaterThan(0);
   });
 
-  // Step 2: Go to Signup/Login page
-  await homePage.goToSignupLogin();
-  // Step 3: Verify 'New User Signup!' is visible
-  expect(await signupLoginPage.headerTxt.textContent()).toContain(
-    'New User Signup!',
-  );
-  // Step 4: Enter Name and Email
-  await signupLoginPage.newUserSignup(testUser.firstName, testUser.email);
-  
-  // Step 5: Verify that 'ENTER ACCOUNT INFORMATION' is visible
-  expect(await signupFormPage.headerTxt.textContent()).toContain(
-    'Enter Account Information',
-  );
-  
-  // Step 6: Fill full registration form
-  await signupFormPage.completeRegistration(testUser);
-  
-  // Step 7: Verify that 'ACCOUNT CREATED!' is visible
-  expect(await accountCreatedPage.accountCreatedTxt.innerText()).toContain(
-    'ACCOUNT CREATED!',
-  );
-  await accountCreatedPage.clickContinue();
-  
-  // Step 8: Verify that 'Logged in as username' is visible
-  await expect(homePage.loggedInAsTxt).toBeVisible();
-  await expect(homePage.loggedInAsTxt).toContainText(testUser.firstName)
+  await test.step('Step 3. Go to Signup/Login page', async () => {
+    await homePage.goToSignupLogin();
+  });
 
-  // Step 9: Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
-  await homePage.deleteAccount();
-  expect(await homePage.accDeletedTxt.textContent()).toContain(
-    'Account Deleted!',
-  );
+  await test.step('Step 4. Verify "New User Signup!" is visible', async () => {
+    expect(await signupLoginPage.headerTxt.textContent()).toContain(
+      'New User Signup!',
+    );
+  });
+
+  await test.step('Step 5. Enter Name and Email', async () => {
+    await signupLoginPage.newUserSignup(testUser.firstName, testUser.email);
+  });
+
+  await test.step('Step 6. Verify that "ENTER ACCOUNT INFORMATION" is visible', async () => {
+    expect(await signupFormPage.headerTxt.textContent()).toContain(
+      'Enter Account Information',
+    );
+  });
+
+  await test.step('Step 7. Fill full registration form', async () => {
+    await signupFormPage.completeRegistration(testUser);
+  });
+
+  await test.step('Step 8. Verify that "ACCOUNT CREATED!" is visible', async () => {
+    expect(await accountCreatedPage.accountCreatedTxt.innerText()).toContain(
+      'ACCOUNT CREATED!',
+    );
+    await accountCreatedPage.clickContinue();
+  });
+
+  await test.step('Step 9. Verify that "Logged in as username" is visible', async () => {
+    await expect(homePage.loggedInAsTxt).toBeVisible();
+    await expect(homePage.loggedInAsTxt).toContainText(testUser.firstName);
+  });
+
+  await test.step('Step 10. Verify that "ACCOUNT DELETED!" is visible and click "Continue" button', async () => {
+    await homePage.deleteAccount();
+    expect(await homePage.accDeletedTxt.textContent()).toContain(
+      'Account Deleted!',
+    );
+  });
 });
