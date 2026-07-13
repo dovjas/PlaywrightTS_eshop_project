@@ -26,13 +26,13 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   });
 
   await test.step('Step 4. Verify "New User Signup!" is visible', async () => {
-    expect(await signupLoginPage.headerTxt.textContent()).toContain(
+    expect(await signupLoginPage.newUserHeaderTxt.textContent()).toContain(
       'New User Signup!',
     );
   });
 
   await test.step('Step 5. Enter Name and Email', async () => {
-    await signupLoginPage.newUserSignup(testUser.firstName, testUser.email);
+    await signupLoginPage.newUserSignup(testUser.newUser.firstName, testUser.newUser.email);
   });
 
   await test.step('Step 6. Verify that "ENTER ACCOUNT INFORMATION" is visible', async () => {
@@ -42,7 +42,7 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   });
 
   await test.step('Step 7. Fill full registration form', async () => {
-    await signupFormPage.completeRegistration(testUser);
+    await signupFormPage.completeRegistration(testUser.newUser);
   });
 
   await test.step('Step 8. Verify that "ACCOUNT CREATED!" is visible', async () => {
@@ -54,7 +54,7 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
 
   await test.step('Step 9. Verify that "Logged in as username" is visible', async () => {
     await expect(homePage.loggedInAsTxt).toBeVisible();
-    await expect(homePage.loggedInAsTxt).toContainText(testUser.firstName);
+    await expect(homePage.loggedInAsTxt).toContainText(testUser.newUser.firstName);
   });
 
   await test.step('Step 10. Verify that "ACCOUNT DELETED!" is visible and click "Continue" button', async () => {
