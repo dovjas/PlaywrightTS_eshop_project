@@ -4,6 +4,7 @@ import { BasePage } from './base/BasePage.ts';
 export class HomePage extends BasePage {
   readonly signupLoginBtn: Locator;
   readonly loggedInAsTxt: Locator;
+  readonly logoutBtn:Locator; 
   readonly deleteAccBtn:Locator;
   readonly accDeletedTxt:Locator;
   readonly productCards:Locator;
@@ -16,6 +17,7 @@ export class HomePage extends BasePage {
     this.deleteAccBtn = page.locator('li:has-text(" Delete Account")');
     this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
     this.productCards = page.locator('.single-products');
+    this.logoutBtn = page.locator('a[href="/logout"]');
   }
 
   async goToSignupLogin() {

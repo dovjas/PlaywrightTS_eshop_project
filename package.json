@@ -6,7 +6,9 @@
   "scripts": {
     "test:signup": "npx playwright test --grep @signup",
     "test:login": "npx playwright test --grep @login",
-    "test:loginInvalid": "npx playwright test --grep @loginInvalid"
+    "test:loginInvalid": "npx playwright test --grep @loginInvalid",
+    "test:logout": "npx playwright test --grep @logout"
+
   },
   "keywords": [
     "pw",
