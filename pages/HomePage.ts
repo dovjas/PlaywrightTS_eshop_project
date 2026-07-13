@@ -8,6 +8,7 @@ export class HomePage extends BasePage {
   readonly deleteAccBtn:Locator;
   readonly accDeletedTxt:Locator;
   readonly productCards:Locator;
+  readonly contactUsBtn:Locator;
 
   constructor(page: Page) {
     super(page)
@@ -18,10 +19,15 @@ export class HomePage extends BasePage {
     this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
     this.productCards = page.locator('.single-products');
     this.logoutBtn = page.locator('a[href="/logout"]');
+    this.contactUsBtn = page.locator('[href="/contact_us"]');
   }
 
   async goToSignupLogin() {
     await this.signupLoginBtn.click();
+  }
+
+  async goToContactUs(){
+    await this.contactUsBtn.click();
   }
 
   async deleteAccount(){
