@@ -3,7 +3,7 @@ import { HomePage } from '../pages/HomePage.ts';
 import { SignupLoginPage } from '../pages/auth/SignupLoginPage.ts';
 import { testUser } from '../testData/users.ts';
 
-test.skip('Test Case 3: Logout User @logout', async ({ page }) => {
+test('Test Case 3: Logout User @logout', async ({ page }) => {
   const homePage = new HomePage(page);
   const signupLoginPage = new SignupLoginPage(page);
 
