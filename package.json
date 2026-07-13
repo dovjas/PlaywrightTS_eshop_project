@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:signup": "npx playwright test --grep @signup",
-    "test:login": "npx playwright test --grep @login --headed"
+    "test:login": "npx playwright test --grep @login",
+    "test:loginInvalid": "npx playwright test --grep @loginInvalid"
   },
   "keywords": [
     "pw",
@@ -15,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "@types/node": "^26.0.1"
+    "@types/node": "^26.0.1",
+    "dotenv": "^17.4.2"
   }
 }

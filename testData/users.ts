@@ -1,15 +1,20 @@
 import { NewUserData } from '../pages/auth/SignupFormPage.ts';
 
+
 export const testUser = {
   validLoginUser: {
-    email: 'email+1783927188631+@test.com',
-    password: 'Labas11',
+    email: process.env.TEST_USER_EMAIL!,
+    password: process.env.TEST_USER_PASSWORD!,
     firstName: 'Rimas',
+  },
+  invalidLoginUser: {
+    email: 'fail@invaliduser.com',
+    password: 'invalid',
   },
   newUser: {
     email: `email+${Date.now()}+@test.com`,
     title: 'Mr',
-    password: 'Labas11',
+    password: process.env.TEST_USER_PASSWORD!,
     dobDay: '9',
     dobMonth: 'April',
     dobYear: '1990',

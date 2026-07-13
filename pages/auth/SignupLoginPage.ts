@@ -15,6 +15,7 @@ export class SignupLoginPage extends BasePage {
   readonly loginEmailInput: Locator;
   readonly loginPasswordInput:Locator;
   readonly loginBtn:Locator;
+  readonly invalidLoginErrMsg:Locator;
 
   constructor(page: Page) {
     super(page);
@@ -26,6 +27,7 @@ export class SignupLoginPage extends BasePage {
     this.signupBtn = page.getByRole('button', { name: 'Signup' });
     this.newUserHeaderTxt = page.locator('.signup-form h2');
     this.loginHeaderTxt = page.locator('.login-form h2');
+    this.invalidLoginErrMsg = page.locator('.login-form p');
   }
 
   async newUserSignup(name: string, email: string): Promise<void> {
