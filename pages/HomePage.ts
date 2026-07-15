@@ -3,23 +3,25 @@ import { BasePage } from './base/BasePage.ts';
 
 export class HomePage extends BasePage {
   readonly signupLoginBtn: Locator;
-  readonly loggedInAsTxt: Locator;
   readonly logoutBtn:Locator; 
   readonly deleteAccBtn:Locator;
+  readonly contactUsBtn:Locator;
+  readonly productsBtn:Locator;
+  readonly loggedInAsTxt: Locator;
   readonly accDeletedTxt:Locator;
   readonly productCards:Locator;
-  readonly contactUsBtn:Locator;
 
   constructor(page: Page) {
     super(page)
 
     this.signupLoginBtn = page.getByRole('link', { name: /Signup \/ Login/i });
-    this.loggedInAsTxt = page.locator('li b').last();
     this.deleteAccBtn = page.locator('li:has-text(" Delete Account")');
-    this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
-    this.productCards = page.locator('.single-products');
     this.logoutBtn = page.locator('a[href="/logout"]');
     this.contactUsBtn = page.locator('[href="/contact_us"]');
+    this.productsBtn = page.locator('[href="/products"]');
+    this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
+    this.loggedInAsTxt = page.locator('li b').last();
+    this.productCards = page.locator('.single-products');
   }
 
   async goToSignupLogin() {
@@ -28,6 +30,10 @@ export class HomePage extends BasePage {
 
   async goToContactUs(){
     await this.contactUsBtn.click();
+  }
+
+  async goToProducts(){
+    await this.productsBtn.click();
   }
 
   async deleteAccount(){

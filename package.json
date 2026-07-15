@@ -8,7 +8,8 @@
     "test:login": "npx playwright test --grep @login",
     "test:loginInvalid": "npx playwright test --grep @loginInvalid",
     "test:logout": "npx playwright test --grep @logout",
-    "test:contactForm": "npx playwright test --grep @contactForm --headed"
+    "test:contactForm": "npx playwright test --grep @contactForm",
+    "test:productDetails": "npx playwright test --grep @productDetails --headed"
   },
   "keywords": [
     "pw",
