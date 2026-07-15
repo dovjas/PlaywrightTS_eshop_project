@@ -5,12 +5,11 @@ import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
 import { testUser } from '../testData/users';
 
 const contactFormData = {
-  name:'Janas',
-  email:'janas@test.lt',
-  subject:'Testing subject',
-  message:'This is a testing message'
-}
-
+  name: 'Janas',
+  email: 'janas@test.lt',
+  subject: 'Testing subject',
+  message: 'This is a testing message',
+};
 
 test('Test Case 5: Contact Us Form @contactForm', async ({ page }) => {
   const homePage = new HomePage(page);
@@ -60,8 +59,19 @@ test('Test Case 5: Contact Us Form @contactForm', async ({ page }) => {
   });
 
   await test.step('9.  Enter name, email, subject and message', async () => {
-    await contactUsPage.submitContactForm(contactFormData.name,contactFormData.email,contactFormData.subject,contactFormData.message);
+    await contactUsPage.submitContactForm(
+      contactFormData.name,
+      contactFormData.email,
+      contactFormData.subject,
+      contactFormData.message,
+    );
   });
 
+  await test.step('Step 10: Accept alert', async () => {
+    await contactUsPage.acceptAlert();
+  });
 
+  await test.step('Step 11: Verify success message', async () => {
+    await expect(contactUsPage.submitSuccessTxt).toBeVisible();
+  });
 });
