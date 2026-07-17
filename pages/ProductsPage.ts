@@ -22,6 +22,9 @@ export class ProductsPage {
     await this.submitSearchtBtn.click();
   }
   async productSearchResult(productName:string){
-    await this.page.locator(`.single-products p:has-text("${productName}")`);
+    const results = await this.page.locator(
+      `.single-products .productinfo p:has-text("${productName}")`,
+    );
+    return results;
   }
 }
