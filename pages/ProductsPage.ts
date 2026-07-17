@@ -1,19 +1,27 @@
-import {Page, Locator} from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
-export class ProductsPage{
-    page:Page;
-    allProductsCards:Locator;
-    searchInput:Locator;
-    viewProductBtn:Locator;
+export class ProductsPage {
+  page: Page;
+  allProductsCards: Locator;
+  searchInput: Locator;
+  submitSearchtBtn: Locator;
+  viewProductBtn: Locator;
 
+  constructor(page: Page) {
+    this.page = page;
+    this.allProductsCards = page.locator('.single-products');
+    this.searchInput = page.locator('#search_product');
+    this.submitSearchtBtn = page.locator('#submit_search');
+    this.viewProductBtn = page.locator('.choose');
+  }
 
-    constructor(page:Page){
-        this.page = page;
-        this.allProductsCards = page.locator('.single-products');
-        this.viewProductBtn = page.locator('.choose');
-    }
+  async goToProduct() {}
 
-    async goToProduct(){
-
-    }
+  async searchProduct(productName: string) {
+    await this.searchInput.fill(productName);
+    await this.submitSearchtBtn.click();
+  }
+  async productSearchResult(productName:string){
+    await this.page.locator(`.single-products p:has-text("${productName}")`);
+  }
 }
