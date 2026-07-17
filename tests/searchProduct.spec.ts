@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { ProductsPage } from '../pages/ProductsPage';
-import { ProductDetail } from '../pages/ProductDetail';
+import { testUser } from '../testData/users.ts';
+
 
 test('Test Case 6: Search Product @searchProduct', async ({ page }) => {
   const homePage = new HomePage(page);
   const productsPage = new ProductsPage(page);
-  const productDetail = new ProductDetail(page);
 
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
@@ -26,17 +26,25 @@ test('Test Case 6: Search Product @searchProduct', async ({ page }) => {
     await expect(productsPage.allProductsCards.first()).toBeVisible();
   });
   await test.step('Step 6. Enter product name in click search button', async () => {
-    await productsPage.searchProduct('Blue Top');
+    await productsPage.searchProduct(testUser.validLoginUser.productName);
   });
   await test.step('Step 7. Verify "SEARCHED PRODUCT" is visible', async () => {
-    const result = (await productsPage.productSearchResult('Blue Top')).first();
+    const result = (
+      await productsPage.productSearchResult(
+        testUser.validLoginUser.productName,
+      )
+    ).first();
     await expect(result).toBeVisible();
   });
 
   await test.step('Step 8.  Verify all the products related to search are visible', async () => {
-    const results =await productsPage.productSearchResult('Blue Top');
+    const results = await productsPage.productSearchResult(
+      testUser.validLoginUser.productName,
+    );
     const count = await results.count();
     await expect(count).toBeGreaterThan(0);
-    console.log(`Found ${await count} products for "Blue Top"`);
+    console.log(
+      `Found ${await count} products for ${testUser.validLoginUser.productName}`,
+    );
   });
 });

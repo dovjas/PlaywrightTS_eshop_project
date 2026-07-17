@@ -6,6 +6,7 @@ export const testUser = {
     email: process.env.TEST_USER_EMAIL!,
     password: process.env.TEST_USER_PASSWORD!,
     firstName: 'Rimas',
+    productName: 'Lace Top For Women',
   },
   invalidLoginUser: {
     email: 'fail@invaliduser.com',
