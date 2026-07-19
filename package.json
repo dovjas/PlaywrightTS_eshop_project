@@ -10,7 +10,8 @@
     "test:logout": "npx playwright test --grep @logout",
     "test:contactForm": "npx playwright test --grep @contactForm",
     "test:productDetails": "npx playwright test --grep @productDetails",
-    "test:searchProduct": "npx playwright test --grep @searchProduct --headed"
+    "test:searchProduct": "npx playwright test --grep @searchProduct",
+    "test:subscribe": "npx playwright test --grep @subscribe"
   },
   "keywords": [
     "pw",
