@@ -7,6 +7,7 @@ export class HomePage extends BasePage {
   readonly deleteAccBtn: Locator;
   readonly contactUsBtn: Locator;
   readonly productsBtn: Locator;
+  readonly cartBtn:Locator;
   readonly loggedInAsTxt: Locator;
   readonly accDeletedTxt: Locator;
   readonly productCards: Locator;
@@ -23,6 +24,7 @@ export class HomePage extends BasePage {
     this.logoutBtn = page.locator('a[href="/logout"]');
     this.contactUsBtn = page.locator('[href="/contact_us"]');
     this.productsBtn = page.locator('[href="/products"]');
+    this.cartBtn = page.locator('[href="/view_cart"]');
     this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
     this.loggedInAsTxt = page.locator('li b').last();
     this.productCards = page.locator('.single-products');
