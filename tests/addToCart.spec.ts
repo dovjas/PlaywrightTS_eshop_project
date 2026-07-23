@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { ProductsPage } from '../pages/ProductsPage';
-import { testUser } from '../testData/users.ts';
-import { CartPage } from '../pages/CartPage.ts';
+import { testUser } from '../testData/users';
+import { CartPage } from '../pages/CartPage';
+import { productData } from '../testData/product';
 
 test('Test Case 6: Search Product @addToCart', async ({ page }) => {
   const homePage = new HomePage(page);
@@ -27,13 +28,11 @@ test('Test Case 6: Search Product @addToCart', async ({ page }) => {
     await expect(productsPage.allProductsCards.first()).toBeVisible();
   });
   await test.step('Step 6. Enter product name in click search button', async () => {
-    await productsPage.searchProduct(testUser.validLoginUser.productName);
+    await productsPage.searchProduct(productData.name);
   });
   await test.step('Step 7. Verify "SEARCHED PRODUCT" is visible', async () => {
     const result = (
-      await productsPage.productSearchResult(
-        testUser.validLoginUser.productName,
-      )
+      await productsPage.productSearchResult(productData.name)
     ).first();
     await expect(result).toBeVisible();
   });
@@ -44,9 +43,7 @@ test('Test Case 6: Search Product @addToCart', async ({ page }) => {
     );
     const count = await results.count();
     await expect(count).toBeGreaterThan(0);
-    console.log(
-      `Found ${await count} products for ${testUser.validLoginUser.productName}`,
-    );
+    console.log(`Found ${await count} products for ${productData.name}`);
   });
   await test.step('Step 9. Hover over first product and click "Add to cart"', async () => {
     await productsPage.addToCart();
@@ -56,6 +53,12 @@ test('Test Case 6: Search Product @addToCart', async ({ page }) => {
   });
 
   await test.step('Step 11. Verify product price, quantity and total price"', async () => {
-    await cartPage.verifyCartDetails(testUser.validLoginUser.productName)
+    const actual = await cartPage.getCartDetails();
+
+    expect(actual.name).toContain(productData.name);
+    expect(actual.category).toContain(productData.category);
+    expect(actual.price).toContain(productData.price);
+    expect(actual.quantity).toContain(productData.quantity);
+    expect(actual.totalPrice).toContain(productData.totalPrice)
   });
 });

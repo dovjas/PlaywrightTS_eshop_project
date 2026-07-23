@@ -1,5 +1,14 @@
 import { Locator, Page } from '@playwright/test';
 
+interface ProductItem{
+  name:string,
+  category:string,
+  price:string,
+  quantity:string,
+  totalPrice:string,
+}
+
+
 export class CartPage {
   page: Page;
   productNameTxt: Locator;
@@ -10,7 +19,7 @@ export class CartPage {
   proceedToCheckoutBtn: Locator;
   //constructor
 
-  constructor(page: Page,productName:string) {
+  constructor(page: Page) {
     this.page=page;
     this.productNameTxt = page.getByRole('link', { name: `Lace Top For Women` });
     this.productCategoryTxt = page.locator('.cart_description p');
@@ -20,18 +29,13 @@ export class CartPage {
     this.proceedToCheckoutBtn = page.locator('a.check_out');
     
   }
-  async verifyCartDetails() {
-    const name = await this.productNameTxt.innerText();
-    const category = await this.productCategoryTxt.innerText();
-    const price = await this.productPriceTxt.innerText();
-    const quantity = await this.productQuantityTxt.innerText();
-    const totalPrice = await this.totalPriceTxt.innerText();
-    console.log({
-      name:name,
-      category:category,
-      price:price,
-      quantity:quantity,
-      totalPrice:totalPrice
-    })
+  async getCartDetails() {
+   return {
+      name : await this.productNameTxt.innerText(),
+      category : await this.productCategoryTxt.innerText(),
+      price : await this.productPriceTxt.innerText(),
+      quantity : await this.productQuantityTxt.innerText(),
+      totalPrice : await this.totalPriceTxt.innerText(),
+    }
   }
 }
