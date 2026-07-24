@@ -12,7 +12,8 @@
     "test:productDetails": "npx playwright test --grep @productDetails",
     "test:searchProduct": "npx playwright test --grep @searchProduct",
     "test:subscribe": "npx playwright test --grep @subscribe",
-    "test:addToCart": "npx playwright test --grep @addToCart"
+    "test:addToCart": "npx playwright test --grep @addToCart",
+    "test:placeOrder": "npx playwright test --grep @placeOrder --headed"
   },
   "keywords": [
     "pw",

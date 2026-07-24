@@ -4,11 +4,15 @@ import { ProductsPage } from '../pages/ProductsPage';
 import { testUser } from '../testData/users';
 import { CartPage } from '../pages/CartPage';
 import { productData } from '../testData/product';
+import { CheckoutPage } from '../pages/CheckoutPage';
+import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
 
-test('Test Case 6: Add Products in Cart @addToCart', async ({ page }) => {
+test('Test Case 9: Place Order @placeOrder', async ({ page }) => {
   const homePage = new HomePage(page);
   const productsPage = new ProductsPage(page);
   const cartPage = new CartPage(page);
+  const checkoutPage = new CheckoutPage(page);
+  const signupLoginPage = new SignupLoginPage(page);
 
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
@@ -17,6 +21,26 @@ test('Test Case 6: Add Products in Cart @addToCart', async ({ page }) => {
     await expect(page).toHaveURL(/automationexercise.com/);
     const count = await homePage.productCards.count();
     await expect(count).toBeGreaterThan(0);
+  });
+  await test.step('Step 3. Go to Signup/Login page', async () => {
+    await homePage.goToSignupLogin();
+  });
+  await test.step('Step 4. Verify "Login to your account" is visible', async () => {
+    expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+      'Login to your account',
+    );
+  });
+  await test.step('Step 5. Login using Email and Password ', async () => {
+    await signupLoginPage.userLogin(
+      testUser.validLoginUser.email,
+      testUser.validLoginUser.password,
+    );
+  });
+  await test.step('Step 6. Verify that "Logged in as username" is visible', async () => {
+    await expect(homePage.loggedInAsTxt).toBeVisible();
+    await expect(homePage.loggedInAsTxt).toContainText(
+      testUser.validLoginUser.firstName,
+    );
   });
   await test.step('3. Go to "Products" page', async () => {
     await homePage.goToProducts();
@@ -60,5 +84,10 @@ test('Test Case 6: Add Products in Cart @addToCart', async ({ page }) => {
     expect(actual.price).toContain(productData.price);
     expect(actual.quantity).toContain(productData.quantity);
     expect(actual.totalPrice).toContain(productData.totalPrice);
+  });
+
+  await test.step('Step 11: Verify Address Details', async () => {
+    await cartPage.proceedToCheckoutBtn.click();
+    await checkoutPage.getAddressData();
   });
 });
