@@ -90,4 +90,7 @@ test('Test Case 9: Place Order @placeOrder', async ({ page }) => {
     await cartPage.proceedToCheckoutBtn.click();
     await checkoutPage.getAddressData();
   });
+    await test.step('Step 12: Place order', async () => {
+      await checkoutPage.placeOrder();
+    });
 });

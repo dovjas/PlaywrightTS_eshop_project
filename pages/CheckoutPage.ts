@@ -8,6 +8,7 @@ export class CheckoutPage {
   addressCityStatePostcode: Locator;
   addressCountry: Locator;
   addressPhone: Locator;
+  placeOrderBtn: Locator;
 
   //constructor
   constructor(page: Page) {
@@ -25,6 +26,7 @@ export class CheckoutPage {
       '#address_delivery .address_country_name',
     );
     this.addressPhone = page.locator('#address_delivery .address_phone');
+    this.placeOrderBtn = page.getByRole('link', { name: 'Place Order' });
   }
 
   async getAddressData() {
@@ -36,5 +38,9 @@ export class CheckoutPage {
       phone:await this.addressPhone.innerText(),
     };
     console.log('Address: ', address);
+  }
+
+  async placeOrder(){
+    await this.placeOrderBtn.click();
   }
 }
