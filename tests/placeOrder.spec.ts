@@ -6,6 +6,9 @@ import { CartPage } from '../pages/CartPage';
 import { productData } from '../testData/product';
 import { CheckoutPage } from '../pages/CheckoutPage';
 import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
+import { PaymentPage } from '../pages/PaymentPage';
+import { PaymentDonePage } from '../pages/PaymentDonePage';
+import { paymentCard } from '../testData/paymentCard';
 
 test('Test Case 9: Place Order @placeOrder', async ({ page }) => {
   const homePage = new HomePage(page);
@@ -13,6 +16,8 @@ test('Test Case 9: Place Order @placeOrder', async ({ page }) => {
   const cartPage = new CartPage(page);
   const checkoutPage = new CheckoutPage(page);
   const signupLoginPage = new SignupLoginPage(page);
+  const paymentPage = new PaymentPage(page);
+  const paymentDonePage = new PaymentDonePage(page);
 
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
@@ -90,7 +95,17 @@ test('Test Case 9: Place Order @placeOrder', async ({ page }) => {
     await cartPage.proceedToCheckoutBtn.click();
     await checkoutPage.getAddressData();
   });
-    await test.step('Step 12: Place order', async () => {
-      await checkoutPage.placeOrder();
-    });
+  await test.step('Step 12: Place order', async () => {
+    await checkoutPage.placeOrder();
+  });
+  await test.step('Step 13: Pay and confirm order', async () => {
+    await paymentPage.enterCardDetails(paymentCard);
+    await paymentPage.payAndConfirmOrder();
+    // expect(await paymentPage.getSuccessMsg()).toContain(
+    //   'Your order has been placed successfully!',
+    // );
+  });
+  await test.step('Step 14:Verify if order has been confirmed', async () => {
+    expect(await paymentDonePage.getSuccessh2Msg()).toContain('ORDER PLACED!');
+  });
 });
