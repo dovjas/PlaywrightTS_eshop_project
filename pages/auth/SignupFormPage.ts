@@ -1,8 +1,8 @@
 import { Page, Locator } from '@playwright/test';
-import {BasePage} from '../base/BasePage'
+import { BasePage } from '../base/BasePage';
 
 export interface NewUserData {
-  email:string,
+  email: string;
   title?: 'Mr' | 'Mrs';
   password: string;
   dobDay?: string;
@@ -66,14 +66,7 @@ export class SignupFormPage extends BasePage {
   async completeRegistration(userData: NewUserData): Promise<void> {
     await this.selectTilte(userData.title);
     await this.passwordInput.fill(userData.password);
-
-    // Date of Birth
-    if (userData.dobDay)
-      await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
-    if (userData.dobMonth)
-      await this.dateOfBirthMonthSel.selectOption({ label: userData.dobMonth });
-    if (userData.dobYear)
-      await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
+    await this.fillDoB(userData);
 
     // Checkboxes
     await this.newsletterCbox.check();
@@ -94,11 +87,24 @@ export class SignupFormPage extends BasePage {
     await this.createAccountBtn.click();
   }
 
-  private async selectTilte(title?:'Mr'|'Mrs'):Promise<void>{
+  private async selectTilte(title?: 'Mr' | 'Mrs'): Promise<void> {
     if (title === 'Mr') {
       await this.titleMrRadio.check();
     } else {
       await this.titleMrsRadio.check();
     }
   }
+
+  private async fillDoB(userData:NewUserData):Promise<void>{
+    if (userData.dobDay)
+      await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
+    if (userData.dobMonth)
+      await this.dateOfBirthMonthSel.selectOption({ label: userData.dobMonth });
+    if (userData.dobYear)
+      await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
+  }
+
+  
+
+
 }
