@@ -67,10 +67,7 @@ export class SignupFormPage extends BasePage {
     await this.selectTilte(userData.title);
     await this.passwordInput.fill(userData.password);
     await this.fillDoB(userData);
-
-    // Checkboxes
-    await this.newsletterCbox.check();
-    await this.specOffersCbox.check();
+    await this.handleCheckboxes();
 
     // Personal Information
     await this.firstNameInput.fill(userData.firstName);
@@ -95,7 +92,7 @@ export class SignupFormPage extends BasePage {
     }
   }
 
-  private async fillDoB(userData:NewUserData):Promise<void>{
+  private async fillDoB(userData: NewUserData): Promise<void> {
     if (userData.dobDay)
       await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
     if (userData.dobMonth)
@@ -104,7 +101,8 @@ export class SignupFormPage extends BasePage {
       await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
   }
 
-  
-
-
+  private async handleCheckboxes() {
+    await this.newsletterCbox.check();
+    await this.specOffersCbox.check();
+  }
 }
