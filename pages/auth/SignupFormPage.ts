@@ -68,14 +68,8 @@ export class SignupFormPage extends BasePage {
     await this.passwordInput.fill(userData.password);
     await this.fillDoB(userData);
     await this.handleCheckboxes();
-    await this.fillPersonalInformation(userData);
-
-    // Address
-    await this.countrySel.selectOption({ label: userData.country });
-    if (userData.state) await this.stateInput.fill(userData.state);
-    if (userData.city) await this.cityInput.fill(userData.city);
-    await this.zipCodeInput.fill(userData.zipCode);
-    await this.mobileNumbInput.fill(userData.mobileNumber);
+    await this.fillPersonalInfo(userData);
+    await this.fillAddressInfo(userData)
 
     await this.createAccountBtn.click();
   }
@@ -97,16 +91,22 @@ export class SignupFormPage extends BasePage {
       await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
   }
 
-  private async handleCheckboxes() {
+  private async handleCheckboxes():Promise<void> {
     await this.newsletterCbox.check();
     await this.specOffersCbox.check();
   }
 
-  private async fillPersonalInformation(userData:NewUserData) {
+  private async fillPersonalInfo(userData: NewUserData):Promise<void> {
     await this.firstNameInput.fill(userData.firstName);
     await this.lastNameInput.fill(userData.lastName);
     await this.addressInput.fill(userData.address);
   }
 
-  
+  private async fillAddressInfo(userData: NewUserData):Promise<void> {
+    await this.countrySel.selectOption({ label: userData.country });
+    if (userData.state) await this.stateInput.fill(userData.state);
+    if (userData.city) await this.cityInput.fill(userData.city);
+    await this.zipCodeInput.fill(userData.zipCode);
+    await this.mobileNumbInput.fill(userData.mobileNumber);
+  }
 }
