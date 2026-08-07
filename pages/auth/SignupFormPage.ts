@@ -68,11 +68,7 @@ export class SignupFormPage extends BasePage {
     await this.passwordInput.fill(userData.password);
     await this.fillDoB(userData);
     await this.handleCheckboxes();
-
-    // Personal Information
-    await this.firstNameInput.fill(userData.firstName);
-    await this.lastNameInput.fill(userData.lastName);
-    await this.addressInput.fill(userData.address);
+    await this.fillPersonalInformation(userData);
 
     // Address
     await this.countrySel.selectOption({ label: userData.country });
@@ -105,4 +101,12 @@ export class SignupFormPage extends BasePage {
     await this.newsletterCbox.check();
     await this.specOffersCbox.check();
   }
+
+  private async fillPersonalInformation(userData:NewUserData) {
+    await this.firstNameInput.fill(userData.firstName);
+    await this.lastNameInput.fill(userData.lastName);
+    await this.addressInput.fill(userData.address);
+  }
+
+  
 }
