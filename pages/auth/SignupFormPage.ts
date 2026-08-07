@@ -19,28 +19,28 @@ export interface NewUserData {
 }
 
 export class SignupFormPage extends BasePage {
-  readonly  headerTxt: Locator;
-  readonly  titleMrRadio: Locator;
-  readonly  titleMrsRadio: Locator;
-  readonly  passwordInput: Locator;
-  readonly  dateOfBirthDaySel: Locator;
-  readonly  dateOfBirthMonthSel: Locator;
-  readonly  dateOfBirthYearSel: Locator;
-  readonly  newsletterCbox: Locator;
-  readonly  specOffersCbox: Locator;
-  readonly  firstNameInput: Locator;
-  readonly  lastNameInput: Locator;
-  readonly  addressInput: Locator;
+  readonly headerTxt: Locator;
+  readonly titleMrRadio: Locator;
+  readonly titleMrsRadio: Locator;
+  readonly passwordInput: Locator;
+  readonly dateOfBirthDaySel: Locator;
+  readonly dateOfBirthMonthSel: Locator;
+  readonly dateOfBirthYearSel: Locator;
+  readonly newsletterCbox: Locator;
+  readonly specOffersCbox: Locator;
+  readonly firstNameInput: Locator;
+  readonly lastNameInput: Locator;
+  readonly addressInput: Locator;
   readonly countrySel: Locator;
-  readonly  stateInput: Locator;
-  readonly  cityInput: Locator;
-  readonly  zipCodeInput: Locator;
-  readonly  mobileNumbInput: Locator;
-  readonly  createAccountBtn: Locator;
+  readonly stateInput: Locator;
+  readonly cityInput: Locator;
+  readonly zipCodeInput: Locator;
+  readonly mobileNumbInput: Locator;
+  readonly createAccountBtn: Locator;
 
   constructor(page: Page) {
-    super(page)
-    
+    super(page);
+
     this.headerTxt = page.locator('.login-form h2').first();
     this.titleMrRadio = page.locator('#id_gender1');
     this.titleMrsRadio = page.locator('#id_gender2');
@@ -64,13 +64,7 @@ export class SignupFormPage extends BasePage {
   }
 
   async completeRegistration(userData: NewUserData): Promise<void> {
-    // Select Title
-    if (userData.title === 'Mr') {
-      await this.titleMrRadio.check();
-    } else {
-      await this.titleMrsRadio.check();
-    }
-
+    await this.selectTilte(userData.title);
     await this.passwordInput.fill(userData.password);
 
     // Date of Birth
@@ -98,5 +92,13 @@ export class SignupFormPage extends BasePage {
     await this.mobileNumbInput.fill(userData.mobileNumber);
 
     await this.createAccountBtn.click();
+  }
+
+  private async selectTilte(title?:'Mr'|'Mrs'):Promise<void>{
+    if (title === 'Mr') {
+      await this.titleMrRadio.check();
+    } else {
+      await this.titleMrsRadio.check();
+    }
   }
 }
