@@ -14,7 +14,7 @@ export const testUser = {
   },
   newUser: {
     email: `email+${Date.now()}+@test.com`,
-    title: 'Mr',
+    title: 'Mrs',
     password: process.env.TEST_USER_PASSWORD!,
     dobDay: '9',
     dobMonth: 'April',

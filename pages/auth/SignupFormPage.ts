@@ -1,8 +1,8 @@
 import { Page, Locator } from '@playwright/test';
-import {BasePage} from '../base/BasePage'
+import { BasePage } from '../base/BasePage';
 
 export interface NewUserData {
-  email:string,
+  email: string;
   title?: 'Mr' | 'Mrs';
   password: string;
   dobDay?: string;
@@ -19,28 +19,28 @@ export interface NewUserData {
 }
 
 export class SignupFormPage extends BasePage {
-  readonly  headerTxt: Locator;
-  readonly  titleMrRadio: Locator;
-  readonly  titleMrsRadio: Locator;
-  readonly  passwordInput: Locator;
-  readonly  dateOfBirthDaySel: Locator;
-  readonly  dateOfBirthMonthSel: Locator;
-  readonly  dateOfBirthYearSel: Locator;
-  readonly  newsletterCbox: Locator;
-  readonly  specOffersCbox: Locator;
-  readonly  firstNameInput: Locator;
-  readonly  lastNameInput: Locator;
-  readonly  addressInput: Locator;
+  readonly headerTxt: Locator;
+  readonly titleMrRadio: Locator;
+  readonly titleMrsRadio: Locator;
+  readonly passwordInput: Locator;
+  readonly dateOfBirthDaySel: Locator;
+  readonly dateOfBirthMonthSel: Locator;
+  readonly dateOfBirthYearSel: Locator;
+  readonly newsletterCbox: Locator;
+  readonly specOffersCbox: Locator;
+  readonly firstNameInput: Locator;
+  readonly lastNameInput: Locator;
+  readonly addressInput: Locator;
   readonly countrySel: Locator;
-  readonly  stateInput: Locator;
-  readonly  cityInput: Locator;
-  readonly  zipCodeInput: Locator;
-  readonly  mobileNumbInput: Locator;
-  readonly  createAccountBtn: Locator;
+  readonly stateInput: Locator;
+  readonly cityInput: Locator;
+  readonly zipCodeInput: Locator;
+  readonly mobileNumbInput: Locator;
+  readonly createAccountBtn: Locator;
 
   constructor(page: Page) {
-    super(page)
-    
+    super(page);
+
     this.headerTxt = page.locator('.login-form h2').first();
     this.titleMrRadio = page.locator('#id_gender1');
     this.titleMrsRadio = page.locator('#id_gender2');
@@ -64,31 +64,11 @@ export class SignupFormPage extends BasePage {
   }
 
   async completeRegistration(userData: NewUserData): Promise<void> {
-    // Select Title
-    if (userData.title === 'Mr') {
-      await this.titleMrRadio.check();
-    } else {
-      await this.titleMrsRadio.check();
-    }
-
+    await this.selectTilte(userData.title);
     await this.passwordInput.fill(userData.password);
-
-    // Date of Birth
-    if (userData.dobDay)
-      await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
-    if (userData.dobMonth)
-      await this.dateOfBirthMonthSel.selectOption({ label: userData.dobMonth });
-    if (userData.dobYear)
-      await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
-
-    // Checkboxes
-    await this.newsletterCbox.check();
-    await this.specOffersCbox.check();
-
-    // Personal Information
-    await this.firstNameInput.fill(userData.firstName);
-    await this.lastNameInput.fill(userData.lastName);
-    await this.addressInput.fill(userData.address);
+    await this.fillDoB(userData);
+    await this.handleCheckboxes();
+    await this.fillPersonalInformation(userData);
 
     // Address
     await this.countrySel.selectOption({ label: userData.country });
@@ -99,4 +79,34 @@ export class SignupFormPage extends BasePage {
 
     await this.createAccountBtn.click();
   }
+
+  private async selectTilte(title?: 'Mr' | 'Mrs'): Promise<void> {
+    if (title === 'Mr') {
+      await this.titleMrRadio.check();
+    } else {
+      await this.titleMrsRadio.check();
+    }
+  }
+
+  private async fillDoB(userData: NewUserData): Promise<void> {
+    if (userData.dobDay)
+      await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
+    if (userData.dobMonth)
+      await this.dateOfBirthMonthSel.selectOption({ label: userData.dobMonth });
+    if (userData.dobYear)
+      await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
+  }
+
+  private async handleCheckboxes() {
+    await this.newsletterCbox.check();
+    await this.specOffersCbox.check();
+  }
+
+  private async fillPersonalInformation(userData:NewUserData) {
+    await this.firstNameInput.fill(userData.firstName);
+    await this.lastNameInput.fill(userData.lastName);
+    await this.addressInput.fill(userData.address);
+  }
+
+  
 }

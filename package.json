@@ -4,7 +4,7 @@
   "description": "Playwight TS eshop project",
   "main": "index.js",
   "scripts": {
-    "test:signup": "npx playwright test --grep @signup",
+    "test:signup": "npx playwright test --grep @signup --headed",
     "test:login": "npx playwright test --grep @login",
     "test:loginInvalid": "npx playwright test --grep @loginInvalid",
     "test:logout": "npx playwright test --grep @logout",
