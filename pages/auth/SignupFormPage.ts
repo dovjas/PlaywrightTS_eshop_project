@@ -64,7 +64,7 @@ export class SignupFormPage extends BasePage {
   }
 
   async completeRegistration(userData: NewUserData): Promise<void> {
-    await this.selectTilte(userData.title);
+    await this.selectTitle(userData.title);
     await this.passwordInput.fill(userData.password);
     await this.fillDoB(userData);
     await this.handleCheckboxes();
@@ -74,7 +74,7 @@ export class SignupFormPage extends BasePage {
     await this.createAccountBtn.click();
   }
 
-  private async selectTilte(title?: 'Mr' | 'Mrs'): Promise<void> {
+  private async selectTitle(title?: 'Mr' | 'Mrs'): Promise<void> {
     if (title === 'Mr') {
       await this.titleMrRadio.check();
     } else {
