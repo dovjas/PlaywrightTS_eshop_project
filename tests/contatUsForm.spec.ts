@@ -60,10 +60,7 @@ test('Test Case 5: Contact Us Form @contactForm', async ({ page }) => {
 
   await test.step('9.  Enter name, email, subject and message', async () => {
     await contactUsPage.submitContactForm(
-      contactFormData.name,
-      contactFormData.email,
-      contactFormData.subject,
-      contactFormData.message,
+      contactFormData
     );
   });
 
