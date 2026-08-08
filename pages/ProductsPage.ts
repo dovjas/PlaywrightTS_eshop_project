@@ -1,16 +1,17 @@
 import { Page, Locator } from '@playwright/test';
+import {BasePage} from './base/BasePage';
 
-export class ProductsPage {
-  page: Page;
-  allProductsCards: Locator;
-  searchInput: Locator;
-  submitSearchtBtn: Locator;
-  viewProductBtn: Locator;
-  viewCartBtn:Locator;
-  addToCartBtn: Locator;
+export class ProductsPage extends BasePage {
+  readonly allProductsCards: Locator;
+  readonly searchInput: Locator;
+  readonly submitSearchtBtn: Locator;
+  readonly viewProductBtn: Locator;
+  readonly viewCartBtn: Locator;
+  readonly addToCartBtn: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
+
     this.allProductsCards = page.locator('.single-products');
     this.searchInput = page.locator('#search_product');
     this.submitSearchtBtn = page.locator('#submit_search');
@@ -21,22 +22,21 @@ export class ProductsPage {
 
   async goToProduct() {}
 
-  async searchProduct(productName: string) {
+  async searchProduct(productName: string): Promise<void> {
     await this.searchInput.fill(productName);
     await this.submitSearchtBtn.click();
   }
-  async productSearchResult(productName: string) {
-    const results = await this.page.locator(
+  async productSearchResult(productName: string):Promise<Locator> {
+    return this.page.locator(
       `.single-products .productinfo p:has-text("${productName}")`,
     );
-    return results;
   }
 
-  async addToCart() {
+  async addToCart(): Promise<void> {
     await this.addToCartBtn.click();
   }
 
-  async viewCart(){
+  async viewCart(): Promise<void> {
     await this.viewCartBtn.click();
   }
 }

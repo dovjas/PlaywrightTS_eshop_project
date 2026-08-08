@@ -2,15 +2,16 @@ import { Page, Locator } from '@playwright/test';
 import { BasePage } from './base/BasePage';
 
 export class ProductDetail extends BasePage {
-  productName: Locator;
-  productCategory: Locator;
-  productPrice: Locator;
-  productAvailability: Locator;
-  productCondition: Locator;
-  productBrand: Locator;
+  readonly productName: Locator;
+  readonly productCategory: Locator;
+  readonly productPrice: Locator;
+  readonly productAvailability: Locator;
+  readonly productCondition: Locator;
+  readonly productBrand: Locator;
 
   constructor(page: Page) {
-    super(page)
+    super(page);
+
     this.productName = page.locator('.product-information h2');
     this.productCategory = page.locator('.product-information p');
     this.productPrice = page.locator('.product-information span span');
@@ -24,26 +25,26 @@ export class ProductDetail extends BasePage {
       '.product-information p:has-text("Brand")',
     );
   }
-  getProductName() {
+  getProductName(): Locator {
     return this.productName;
   }
 
-  getPorductCategory() {
+  getPorductCategory(): Locator {
     return this.productCategory.first();
   }
-  getProductPrice() {
+  getProductPrice(): Locator {
     return this.productPrice;
   }
 
-  getproductAvailability() {
+  getproductAvailability(): Locator {
     return this.productAvailability;
   }
 
-  getProductCondition() {
+  getProductCondition(): Locator {
     return this.productCondition;
   }
 
-  getProductBrand() {
+  getProductBrand(): Locator {
     return this.productBrand;
   }
 }

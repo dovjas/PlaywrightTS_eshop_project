@@ -1,15 +1,22 @@
-import { Page, Locator, expect } from '@playwright/test';
-import { BasePage } from './base/BasePage.ts';
+import { Page, Locator } from '@playwright/test';
+import { BasePage } from './base/BasePage';
+
+export interface ContactFormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 export class ContactUsPage extends BasePage {
-  getInTouchHeaderTxt: Locator;
-  nameInput: Locator;
-  emailInput: Locator;
-  subjectInput: Locator;
-  msgTextArea: Locator;
-  submitBtn: Locator;
-  chooseFileBtn: Locator;
-  submitSuccessTxt: Locator;
+  readonly getInTouchHeaderTxt: Locator;
+  readonly nameInput: Locator;
+  readonly emailInput: Locator;
+  readonly subjectInput: Locator;
+  readonly msgTextArea: Locator;
+  readonly submitBtn: Locator;
+  readonly chooseFileBtn: Locator;
+  readonly submitSuccessTxt: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -26,22 +33,17 @@ export class ContactUsPage extends BasePage {
     this.submitSuccessTxt = page.locator('.contact-form .status');
   }
 
-  async submitContactForm(
-    name: string,
-    email: string,
-    subject: string,
-    message: string,
-  ) {
-    await this.nameInput.fill(name);
-    await this.emailInput.fill(email);
-    await this.subjectInput.fill(subject);
-    await this.msgTextArea.fill(message);
+  async submitContactForm(data:ContactFormData):Promise<void> {
+    await this.nameInput.fill(data.name);
+    await this.emailInput.fill(data.email);
+    await this.subjectInput.fill(data.subject);
+    await this.msgTextArea.fill(data.message);
 
-    this.page.once("dialog", (dialog) => dialog.accept());
-		await this.submitBtn.click();
+    this.page.once('dialog', (dialog) => dialog.accept());
+    await this.submitBtn.click();
   }
 
-  async acceptAlert() {
+  async acceptAlert():Promise<void> {
     this.page.once('dialog', (dialog) => {
       console.log('Alert message:', dialog.message());
       dialog.accept();

@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from './base/BasePage';
 
 interface CardDetails {
   cardName: string;
@@ -8,18 +9,18 @@ interface CardDetails {
   year: string;
 }
 
-export class PaymentPage {
-  page: Page;
-  nameOnCardInput: Locator;
-  cardNumberInput: Locator;
-  cvcInput: Locator;
-  expirationInput: Locator;
-  yearInput: Locator;
-  confirmOrderBtn: Locator;
-  successMsg: Locator;
+export class PaymentPage extends BasePage {
+  readonly nameOnCardInput: Locator;
+  readonly cardNumberInput: Locator;
+  readonly cvcInput: Locator;
+  readonly expirationInput: Locator;
+  readonly yearInput: Locator;
+  readonly confirmOrderBtn: Locator;
+  readonly successMsg: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
+
     this.nameOnCardInput = page.locator('[data-qa="name-on-card"]');
     this.cardNumberInput = page.locator('[data-qa="card-number"]');
     this.cvcInput = page.locator('[data-qa="cvc"]');
@@ -29,7 +30,7 @@ export class PaymentPage {
     this.successMsg = page.locator('#success_message .alert-success');
   }
 
-  async enterCardDetails(card: CardDetails) {
+  async enterCardDetails(card: CardDetails): Promise<void> {
     await this.nameOnCardInput.fill(card.cardName);
     await this.cardNumberInput.fill(card.cardNumber);
     await this.cvcInput.fill(card.cvc);
@@ -37,11 +38,11 @@ export class PaymentPage {
     await this.yearInput.fill(card.year);
   }
 
-  async getSuccessMsg() {
+  async getSuccessMsg(): Promise<string> {
     return this.successMsg.innerText();
   }
 
-  async payAndConfirmOrder() {
+  async payAndConfirmOrder(): Promise<void> {
     await this.confirmOrderBtn.click();
   }
 }
