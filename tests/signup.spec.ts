@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage.ts';
-import { SignupLoginPage } from '../pages/auth/SignupLoginPage.ts';
-import { SignupFormPage } from '../pages/auth/SignupFormPage.ts';
-import { AccountCreatedPage } from '../pages/auth/AccountCreatedPage.ts';
+import { HomePage } from '../pages/HomePage';
+import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
+import { SignupFormPage } from '../pages/auth/SignupFormPage';
+import { AccountCreatedPage } from '../pages/auth/AccountCreatedPage';
 import { testUser } from '../testData/users.ts';
 
 test('Test Case 1: Register User @signup', async ({ page }) => {

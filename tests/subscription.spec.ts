@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage.ts';
+import { HomePage } from '../pages/HomePage';
 import { testUser } from '../testData/users.ts';
 
 test('Test Case 8: Verify Subscription in home page @subscribe', async ({

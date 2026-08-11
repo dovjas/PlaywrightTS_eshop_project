@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage.ts';
-import { SignupLoginPage } from '../pages/auth/SignupLoginPage.ts';
+import { HomePage } from '../pages/HomePage';
+import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
 import { testUser } from '../testData/users.ts';
 
 test('Test Case 3: Logout User @logout', async ({ page }) => {
