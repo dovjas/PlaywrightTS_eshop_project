@@ -12,8 +12,7 @@ test('Test Case 3: Logout User @logout', async ({ page }) => {
   });
   await test.step('2. Verify that home page is visible successfully', async () => {
     await expect(page).toHaveURL(/automationexercise.com/);
-    const count = await homePage.productCards.count();
-    await expect(count).toBeGreaterThan(0);
+    await expect(homePage.productCards.first()).toBeVisible();
   });
   await test.step('Step 3. Go to Signup/Login page', async () => {
     await homePage.goToSignupLogin();
