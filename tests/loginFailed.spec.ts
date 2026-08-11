@@ -20,7 +20,7 @@ test('Test Case 2: Login User with correct email and password @loginInvalid', as
     await homePage.goToSignupLogin();
   });
   await test.step('Step 4. Verify "Login to your account" is visible', async () => {
-    expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+    await expect(signupLoginPage.loginHeaderTxt).toContainText(
       'Login to your account',
     );
   });

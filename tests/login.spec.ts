@@ -9,18 +9,18 @@ test('Test Case 2: Login User with correct email and password @login', async ({
   const homePage = new HomePage(page);
   const signupLoginPage = new SignupLoginPage(page);
 
-  await test.step('1. Navigate to Home Page', async () => {
+  await test.step('Step 1: Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });
-  await test.step('2. Verify that home page is visible successfully', async () => {
+  await test.step('Step 2: Verify that home page is visible successfully', async () => {
     await expect(page).toHaveURL(/automationexercise.com/);
     await expect(homePage.productCards.first()).toBeVisible();
   });
-  await test.step('Step 3. Go to Signup/Login page', async () => {
+  await test.step('Step 3: Go to Signup/Login page', async () => {
     await homePage.goToSignupLogin();
   });
-  await test.step('Step 4. Verify "Login to your account" is visible', async () => {
-    expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+  await test.step('Step 4: Verify "Login to your account" is visible', async () => {
+    await expect(signupLoginPage.loginHeaderTxt).toContainText(
       'Login to your account',
     );
   });
