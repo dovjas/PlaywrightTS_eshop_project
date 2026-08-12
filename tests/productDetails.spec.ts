@@ -1,15 +1,11 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { ProductsPage } from '../pages/ProductsPage';
-import { ProductDetail } from '../pages/ProductDetail';
+import { test, expect } from '../fixtures/pomFixtures';
 
 test('Test Case 6: Verify All Products and product detail page @productDetails', async ({
   page,
+  homePage,
+  productsPage,
+  productDetail,
 }) => {
-  const homePage = new HomePage(page);
-  const productsPage = new ProductsPage(page);
-  const productDetail = new ProductDetail(page);
-
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });

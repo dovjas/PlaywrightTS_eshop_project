@@ -1,7 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { ContactUsPage } from '../pages/ContactUsPage';
-import { HomePage } from '../pages/HomePage';
-import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
+import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users';
 
 const contactFormData = {
@@ -11,11 +8,12 @@ const contactFormData = {
   message: 'This is a testing message',
 };
 
-test('Test Case 5: Contact Us Form @contactForm', async ({ page }) => {
-  const homePage = new HomePage(page);
-  const signupLoginPage = new SignupLoginPage(page);
-  const contactUsPage = new ContactUsPage(page);
-
+test('Test Case 5: Contact Us Form @contactForm', async ({
+  page,
+  homePage,
+  signupLoginPage,
+  contactUsPage,
+}) => {
   await test.step('Step 1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });
@@ -58,9 +56,7 @@ test('Test Case 5: Contact Us Form @contactForm', async ({ page }) => {
   });
 
   await test.step('9.  Enter name, email, subject and message', async () => {
-    await contactUsPage.submitContactForm(
-      contactFormData
-    );
+    await contactUsPage.submitContactForm(contactFormData);
   });
 
   await test.step('Step 10: Accept alert', async () => {

@@ -1,24 +1,18 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { ProductsPage } from '../pages/ProductsPage';
+import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users';
-import { CartPage } from '../pages/CartPage';
 import { productData } from '../testData/product';
-import { CheckoutPage } from '../pages/CheckoutPage';
-import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
-import { PaymentPage } from '../pages/PaymentPage';
-import { PaymentDonePage } from '../pages/PaymentDonePage';
 import { paymentCard } from '../testData/paymentCard';
 
-test('Test Case 9: Place Order @placeOrder', async ({ page }) => {
-  const homePage = new HomePage(page);
-  const productsPage = new ProductsPage(page);
-  const cartPage = new CartPage(page);
-  const checkoutPage = new CheckoutPage(page);
-  const signupLoginPage = new SignupLoginPage(page);
-  const paymentPage = new PaymentPage(page);
-  const paymentDonePage = new PaymentDonePage(page);
-
+test('Test Case 9: Place Order @placeOrder', async ({
+  page,
+  homePage,
+  productsPage,
+  cartPage,
+  checkoutPage,
+  signupLoginPage,
+  paymentPage,
+  paymentDonePage,
+}) => {
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });
