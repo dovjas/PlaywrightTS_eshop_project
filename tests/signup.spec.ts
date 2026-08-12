@@ -1,16 +1,13 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
-import { SignupFormPage } from '../pages/auth/SignupFormPage';
-import { AccountCreatedPage } from '../pages/auth/AccountCreatedPage';
+import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users.ts';
 
-test('Test Case 1: Register User @signup', async ({ page }) => {
-  const homePage = new HomePage(page);
-  const signupLoginPage = new SignupLoginPage(page);
-  const signupFormPage = new SignupFormPage(page);
-  const accountCreatedPage = new AccountCreatedPage(page);
-
+test('Test Case 1: Register User @signup', async ({
+  page,
+  homePage,
+  signupLoginPage,
+  signupFormPage,
+  accountCreatedPage,
+}) => {
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });
@@ -31,7 +28,10 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
   });
 
   await test.step('Step 5. Enter Name and Email', async () => {
-    await signupLoginPage.newUserSignup(testUser.newUser.firstName, testUser.newUser.email);
+    await signupLoginPage.newUserSignup(
+      testUser.newUser.firstName,
+      testUser.newUser.email,
+    );
   });
 
   await test.step('Step 6. Verify that "ENTER ACCOUNT INFORMATION" is visible', async () => {
@@ -53,7 +53,9 @@ test('Test Case 1: Register User @signup', async ({ page }) => {
 
   await test.step('Step 9. Verify that "Logged in as username" is visible', async () => {
     await expect(homePage.loggedInAsTxt).toBeVisible();
-    await expect(homePage.loggedInAsTxt).toContainText(testUser.newUser.firstName);
+    await expect(homePage.loggedInAsTxt).toContainText(
+      testUser.newUser.firstName,
+    );
   });
 
   await test.step('Step 10. Verify that "ACCOUNT DELETED!" is visible and click "Continue" button', async () => {

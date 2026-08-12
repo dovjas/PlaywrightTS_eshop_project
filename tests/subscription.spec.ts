@@ -1,12 +1,10 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
+import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users.ts';
 
 test('Test Case 8: Verify Subscription in home page @subscribe', async ({
   page,
+  homePage,
 }) => {
-  const homePage = new HomePage(page);
-
   await test.step('Step 1: Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });

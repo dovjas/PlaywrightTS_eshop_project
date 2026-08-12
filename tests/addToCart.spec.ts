@@ -1,15 +1,13 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { ProductsPage } from '../pages/ProductsPage';
+import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users';
-import { CartPage } from '../pages/CartPage';
 import { productData } from '../testData/product';
 
-test('Test Case 6: Add Products in Cart @addToCart', async ({ page }) => {
-  const homePage = new HomePage(page);
-  const productsPage = new ProductsPage(page);
-  const cartPage = new CartPage(page);
-
+test('Test Case 6: Add Products in Cart @addToCart', async ({
+  page,
+  homePage,
+  productsPage,
+  cartPage,
+}) => {
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');
   });
