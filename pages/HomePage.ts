@@ -60,6 +60,10 @@ export class HomePage extends BasePage {
     await this.productsBtn.click();
   }
 
+  async logout():Promise<void>{
+    await  this.logoutBtn.click()
+  }
+
   async deleteAccount(): Promise<void> {
     await this.deleteAccBtn.click();
   }

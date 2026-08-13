@@ -35,7 +35,7 @@ test('Test Case 3: Logout User @logout', async ({
   });
 
   await test.step('Step 7. Logout user', async () => {
-    await homePage.logoutBtn.click();
+    await homePage.logout();
   });
 
   await test.step('Step 8. Verify that user is navigated to login page', async () => {
