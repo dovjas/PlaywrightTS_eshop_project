@@ -26,6 +26,7 @@ export class ProductsPage extends BasePage {
     await this.searchInput.fill(productName);
     await this.submitSearchtBtn.click();
   }
+
   async productSearchResult(productName: string):Promise<Locator> {
     return this.page.locator(
       `.single-products .productinfo p:has-text("${productName}")`,

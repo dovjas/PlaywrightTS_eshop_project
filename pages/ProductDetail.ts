@@ -29,14 +29,14 @@ export class ProductDetail extends BasePage {
     return this.productName;
   }
 
-  getPorductCategory(): Locator {
+  getProductCategory(): Locator {
     return this.productCategory.first();
   }
   getProductPrice(): Locator {
     return this.productPrice;
   }
 
-  getproductAvailability(): Locator {
+  getProductAvailability(): Locator {
     return this.productAvailability;
   }
 

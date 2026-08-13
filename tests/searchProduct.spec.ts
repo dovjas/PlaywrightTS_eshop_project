@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users.ts';
+import { testUser } from '../testData/users';
 
 test('Test Case 6: Search Product @searchProduct', async ({
   page,

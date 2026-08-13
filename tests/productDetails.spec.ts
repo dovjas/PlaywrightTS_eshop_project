@@ -30,9 +30,9 @@ test('Test Case 6: Verify All Products and product detail page @productDetails',
   });
   await test.step('Step 8. Verify that product details are visible: product name, category, price, availability, condition, brand', async () => {
     await expect(productDetail.getProductName()).toBeVisible();
-    await expect(productDetail.getPorductCategory()).toBeVisible();
+    await expect(productDetail.getProductCategory()).toBeVisible();
     await expect(productDetail.getProductPrice()).toBeVisible();
-    await expect(productDetail.getproductAvailability()).toBeVisible();
+    await expect(productDetail.getProductAvailability()).toBeVisible();
     await expect(productDetail.getProductCondition()).toBeVisible();
     await expect(productDetail.getProductBrand()).toBeVisible();
   });

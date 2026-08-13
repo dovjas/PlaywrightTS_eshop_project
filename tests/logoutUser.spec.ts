@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users.ts';
+import { testUser } from '../testData/users';
 
 test('Test Case 3: Logout User @logout', async ({
   page,
@@ -39,7 +39,7 @@ test('Test Case 3: Logout User @logout', async ({
   });
 
   await test.step('Step 8. Verify that user is navigated to login page', async () => {
-    expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+    await expect(signupLoginPage.loginHeaderTxt).toContainText(
       'Login to your account',
     );
   });

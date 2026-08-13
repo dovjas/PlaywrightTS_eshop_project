@@ -28,7 +28,7 @@ test('Test Case 5: Contact Us Form @contactForm', async ({
   });
 
   await test.step('Step 4. Verify "Login to your account" is visible', async () => {
-    expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+    await expect(signupLoginPage.loginHeaderTxt).toContainText(
       'Login to your account',
     );
   });
