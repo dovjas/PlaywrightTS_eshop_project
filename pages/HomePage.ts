@@ -18,7 +18,7 @@ export class HomePage extends BasePage {
   readonly productCards: Locator;
 
   // Subscription
-  readonly siubscriptionH2Txt: Locator;
+  readonly subscriptionH2Txt: Locator;
   readonly subscribtionInput: Locator;
   readonly submitSubsrcibtionBtn: Locator;
   readonly subscriptionSuccessTxt: Locator;
@@ -42,7 +42,7 @@ export class HomePage extends BasePage {
     this.productCards = page.locator('.single-products');
 
     // Subscription
-    this.siubscriptionH2Txt = page.locator('.single-widget h2');
+    this.subscriptionH2Txt = page.locator('.single-widget h2');
     this.subscribtionInput = page.locator('#susbscribe_email');
     this.submitSubsrcibtionBtn = page.locator('#subscribe');
     this.subscriptionSuccessTxt = page.locator('.alert-success');

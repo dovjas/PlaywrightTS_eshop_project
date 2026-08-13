@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users.ts';
+import { testUser } from '../testData/users';
 
 test('Test Case 1: Register User @signup', async ({
   page,
@@ -22,7 +22,7 @@ test('Test Case 1: Register User @signup', async ({
   });
 
   await test.step('Step 4. Verify "New User Signup!" is visible', async () => {
-    expect(await signupLoginPage.newUserHeaderTxt.textContent()).toContain(
+    await expect(signupLoginPage.newUserHeaderTxt).toContainText(
       'New User Signup!',
     );
   });
@@ -35,7 +35,7 @@ test('Test Case 1: Register User @signup', async ({
   });
 
   await test.step('Step 6. Verify that "ENTER ACCOUNT INFORMATION" is visible', async () => {
-    expect(await signupFormPage.headerTxt.textContent()).toContain(
+    await expect(signupFormPage.headerTxt).toContainText(
       'Enter Account Information',
     );
   });
@@ -45,8 +45,8 @@ test('Test Case 1: Register User @signup', async ({
   });
 
   await test.step('Step 8. Verify that "ACCOUNT CREATED!" is visible', async () => {
-    expect(await accountCreatedPage.accountCreatedTxt.innerText()).toContain(
-      'ACCOUNT CREATED!',
+    await expect(accountCreatedPage.accountCreatedTxt).toContainText(
+      'Account Created!',
     );
     await accountCreatedPage.clickContinue();
   });
@@ -60,7 +60,7 @@ test('Test Case 1: Register User @signup', async ({
 
   await test.step('Step 10. Verify that "ACCOUNT DELETED!" is visible and click "Continue" button', async () => {
     await homePage.deleteAccount();
-    expect(await homePage.accDeletedTxt.textContent()).toContain(
+    await expect(homePage.accDeletedTxt).toContainText(
       'Account Deleted!',
     );
   });
