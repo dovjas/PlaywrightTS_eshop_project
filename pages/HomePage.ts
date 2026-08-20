@@ -1,4 +1,4 @@
-import { Page, Locator, Expect, expect } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 import { BasePage } from './base/BasePage.ts';
 
 export class HomePage extends BasePage {
@@ -18,22 +18,21 @@ export class HomePage extends BasePage {
   readonly productCards: Locator;
 
   // Subscription
-  readonly siubscriptionH2Txt: Locator;
-  readonly subscribtionInput: Locator;
-  readonly submitSubsrcibtionBtn: Locator;
+  readonly subscriptionH2Txt: Locator;
+  readonly subscriptionInput: Locator;
+  readonly submitSubscriptionBtn: Locator;
   readonly subscriptionSuccessTxt: Locator;
 
   constructor(page: Page) {
     super(page);
 
     // Navigation
-    this.signupLoginBtn = page.getByRole('link', { name: /Signup \/ Login/i });
-    this.deleteAccBtn = page.locator('li:has-text(" Delete Account")');
-    this.logoutBtn = page.locator('a[href="/logout"]');
-    this.contactUsBtn = page.locator('[href="/contact_us"]');
-    this.productsBtn = page.locator('[href="/products"]');
-    this.cartBtn = page.locator('[href="/view_cart"]');
-
+    this.signupLoginBtn = page.getByRole('link', {name: /Signup \/ Login/i });
+    this.logoutBtn = page.getByRole('link',{name:'Logout'});
+    this.deleteAccBtn = page.getByRole('link',{name:'Delete Account'});
+    this.contactUsBtn = page.getByRole('link', { name: 'Contact us' });
+    this.productsBtn = page.getByRole('link', { name: 'Products' });
+    this.cartBtn = page.getByRole('link', { name: 'Cart' });
     // User status
     this.loggedInAsTxt = page.locator('li b').last();
     this.accDeletedTxt = page.locator('[data-qa="account-deleted"]');
@@ -42,9 +41,9 @@ export class HomePage extends BasePage {
     this.productCards = page.locator('.single-products');
 
     // Subscription
-    this.siubscriptionH2Txt = page.locator('.single-widget h2');
-    this.subscribtionInput = page.locator('#susbscribe_email');
-    this.submitSubsrcibtionBtn = page.locator('#subscribe');
+    this.subscriptionH2Txt = page.locator('.single-widget h2');
+    this.subscriptionInput = page.locator('#susbscribe_email');
+    this.submitSubscriptionBtn = page.locator('#subscribe');
     this.subscriptionSuccessTxt = page.locator('.alert-success');
   }
 
@@ -66,7 +65,7 @@ export class HomePage extends BasePage {
 
   async subscribe(email: string): Promise<void> {
     this.page.locator('footer').scrollIntoViewIfNeeded();
-    await this.subscribtionInput.fill(email);
-    await this.submitSubsrcibtionBtn.click();
+    await this.subscriptionInput.fill(email);
+    await this.submitSubscriptionBtn.click();
   }
 }

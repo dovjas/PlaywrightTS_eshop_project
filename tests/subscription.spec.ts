@@ -13,7 +13,7 @@ test('Test Case 8: Verify Subscription in home page @subscribe', async ({
     await expect(homePage.productCards.first()).toBeVisible();
   });
   await test.step('Step 3: Verify text "SUBSCRIPTION"', async () => {
-    await expect(homePage.siubscriptionH2Txt).toBeVisible();
+    await expect(homePage.subscriptionH2Txt).toBeVisible();
   });
   await test.step('Step 4: Submit subscription form', async () => {
     await homePage.subscribe(testUser.validLoginUser.email);
