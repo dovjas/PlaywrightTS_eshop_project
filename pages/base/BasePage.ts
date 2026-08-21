@@ -9,6 +9,8 @@ export abstract class BasePage {
     this.page = page;
     this.baseURL = 'https://www.automationexercise.com/';
     this.consentBtn = page.getByRole('button', { name: 'Consent' });
+
+    this.consenstHandler();
   }
 
   async navigate(path: string = '/'): Promise<void> {
@@ -19,7 +21,6 @@ export abstract class BasePage {
       await this.page.goto(url, {
         waitUntil: 'domcontentloaded',
       });
-      await this.acceptConsentIfPresent();
       await this.page.waitForLoadState();
       console.log(`[BasePage] Successfully navigated to: ${this.page.url()}`);
     } catch (err) {
@@ -27,14 +28,12 @@ export abstract class BasePage {
       throw err;
     }
   }
-
-  async acceptConsentIfPresent() {
-    try {
-      await this.consentBtn.waitFor({ state: 'visible', timeout: 8000 });
+  async consenstHandler(){
+    await this.page.addLocatorHandler(this.consentBtn, async()=>{
+      console.log(
+        '[BasePage] Consent banner detected. Dismissing automatically...',
+      );
       await this.consentBtn.click();
-      console.log('Consent banner accepted successfully');
-    } catch {
-      console.log('No consent banner found or already accepted');
-    }
+    })
   }
 }
