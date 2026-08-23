@@ -4,19 +4,14 @@ export abstract class BasePage {
   protected page: Page;
   protected readonly baseURL: string;
   protected readonly consentBtn: Locator;
-  protected readonly closeAdBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.baseURL = 'https://www.automationexercise.com/';
     this.consentBtn = page.getByRole('button', { name: 'Consent' });
-    this.closeAdBtn = page
-      .locator('.continue-prompt-text')
-      .or(page.frameLocator('iframe[name^="aswift_"]').locator('#dismiss-button'));
-
+   
     this.consentHandler();
-    // this.addHandler();
-    this.blockAds();
+    this.adBlockHandler();
   }
 
   async navigate(path: string = '/'): Promise<void> {
@@ -43,16 +38,7 @@ export abstract class BasePage {
     });
   }
 
-  private addHandler():void {
-    this.page.addLocatorHandler(this.closeAdBtn, async () => {
-      console.log(
-        '[BasePage] Add banner detected. Dismissing automatically...',
-      );
-      await this.closeAdBtn.click();
-    });
-  }
-
-  private blockAds():void{
-    this.page.route('**/*google*/**',(route)=> route.abort());
+  private adBlockHandler(): void {
+    this.page.route('**/*google*/**', (route) => route.abort());
   }
 }
