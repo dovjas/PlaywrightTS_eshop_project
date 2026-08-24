@@ -45,8 +45,8 @@ test('Test Case 1: Register User @signup', async ({
   });
 
   await test.step('Step 8. Verify that "ACCOUNT CREATED!" is visible', async () => {
-    expect(await accountCreatedPage.accountCreatedTxt.innerText()).toContain(
-      'ACCOUNT CREATED!',
+    await expect(accountCreatedPage.accountCreatedTxt).toContainText(
+      'Account Created!',
     );
     await accountCreatedPage.clickContinue();
   });
@@ -60,7 +60,7 @@ test('Test Case 1: Register User @signup', async ({
 
   await test.step('Step 10. Verify that "ACCOUNT DELETED!" is visible and click "Continue" button', async () => {
     await homePage.deleteAccount();
-    expect(await homePage.accDeletedTxt.textContent()).toContain(
+    await expect(homePage.accDeletedTxt).toContainText(
       'Account Deleted!',
     );
   });
