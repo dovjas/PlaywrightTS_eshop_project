@@ -99,6 +99,6 @@ test('Test Case 9: Place Order @placeOrder', async ({
     // );
   });
   await test.step('Step 14:Verify if order has been confirmed', async () => {
-    expect(await paymentDonePage.getSuccessh2Msg()).toContain('ORDER PLACED!');
+    expect(await paymentDonePage.getSuccessh2Msg()).toContain('Order Placed!');
   });
 });

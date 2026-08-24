@@ -8,7 +8,7 @@ const contactFormData = {
   message: 'This is a testing message',
 };
 
-test('Test Case 5: Contact Us Form @contactForm', async ({
+test('Test Case 8: Contact Us Form @contactForm', async ({
   page,
   homePage,
   signupLoginPage,

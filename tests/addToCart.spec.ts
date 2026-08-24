@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users';
 import { productData } from '../testData/product';
 
-test('Test Case 6: Add Products in Cart @addToCart', async ({
+test('Test Case 7: Add Products in Cart @addToCart', async ({
   page,
   homePage,
   productsPage,

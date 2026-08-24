@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users.ts';
 
-test('Test Case 3: Logout User @logout', async ({
+test('Test Case 4: Logout User @logout', async ({
   page,
   homePage,
   signupLoginPage,

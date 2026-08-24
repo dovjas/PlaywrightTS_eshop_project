@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users.ts';
 
-test('Test Case 6: Search Product @searchProduct', async ({
+test('Test Case 5: Search Product @searchProduct', async ({
   page,
   homePage,
   productsPage,

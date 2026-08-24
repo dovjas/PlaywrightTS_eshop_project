@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/pomFixtures';
 import { testUser } from '../testData/users.ts';
 
-test('Test Case 8: Verify Subscription in home page @subscribe', async ({
+test('Test Case 9: Verify Subscription in home page @subscribe', async ({
   page,
   homePage,
 }) => {
