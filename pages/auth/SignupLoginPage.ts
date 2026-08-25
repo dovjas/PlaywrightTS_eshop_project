@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from '../base/BasePage';
+import { StepLogger } from '../../utils/stepLogger';
 
 export interface NewUser {
   name: string;
@@ -38,14 +39,26 @@ export class SignupLoginPage extends BasePage {
   }
 
   async newUserSignup(name: string, email: string): Promise<void> {
-    await this.nameInput.fill(name);
-    await this.emailInput.fill(email);
-    await this.signupBtn.click();
+    await StepLogger.step(`New user signup: ${email}`, async () => {
+      StepLogger.debug('Filling name input');
+      await this.nameInput.fill(name);
+
+      StepLogger.debug('Filling email input');
+      await this.emailInput.fill(email);
+
+      StepLogger.debug('Clicking signup button');
+      await this.signupBtn.click();
+    });
   }
 
   async userLogin(email: string, password: string): Promise<void> {
-    await this.loginEmailInput.fill(email);
-    await this.loginPasswordInput.fill(password);
-    await this.loginBtn.click();
+    await StepLogger.step(`Login with email: ${email}`, async () => {
+      StepLogger.debug('Filling login credentials');
+      await this.loginEmailInput.fill(email);
+      await this.loginPasswordInput.fill(password);
+
+      StepLogger.debug('Clicking Login button');
+      await this.loginBtn.click();
+    });
   }
 }
