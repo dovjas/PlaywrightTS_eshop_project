@@ -1,0 +1,10 @@
+{"level":"info","message":"[STEP START] Login user: email+1787651817175+@test.com","service":"playwright-e2e","timestamp":"2026-08-25 12:57:04"}
+{"level":"debug","message":"Filling name input","service":"playwright-e2e","timestamp":"2026-08-25 12:57:04"}
+{"level":"debug","message":"Filling email input","service":"playwright-e2e","timestamp":"2026-08-25 12:57:04"}
+{"level":"debug","message":"Clicking signup button","service":"playwright-e2e","timestamp":"2026-08-25 12:57:05"}
+{"level":"info","message":"[STEP PASSED] Login user: email+1787651817175+@test.com","service":"playwright-e2e","timestamp":"2026-08-25 12:57:05"}
+{"level":"info","message":"[STEP START] New user signup: email+1787651991068+@test.com","service":"playwright-e2e","timestamp":"2026-08-25 12:59:56"}
+{"level":"debug","message":"Filling name input","service":"playwright-e2e","timestamp":"2026-08-25 12:59:56"}
+{"level":"debug","message":"Filling email input","service":"playwright-e2e","timestamp":"2026-08-25 12:59:57"}
+{"level":"debug","message":"Clicking signup button","service":"playwright-e2e","timestamp":"2026-08-25 12:59:57"}
+{"level":"info","message":"[STEP PASSED] New user signup: email+1787651991068+@test.com","service":"playwright-e2e","timestamp":"2026-08-25 12:59:57"}
