@@ -45,8 +45,9 @@ test('Test Case 1: Register User @signup', async ({
   });
 
   await test.step('Step 8. Verify that "ACCOUNT CREATED!" is visible', async () => {
+    await page.waitForURL('**/account_created', { timeout: 15000 });
     await expect(accountCreatedPage.accountCreatedTxt).toContainText(
-      'Account Created!',
+      'Account Created!',{ignoreCase:true}
     );
     await accountCreatedPage.clickContinue();
   });

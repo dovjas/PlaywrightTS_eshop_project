@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import {BasePage} from './base/BasePage';
+import { StepLogger } from '../utils/stepLogger';
 
 export class ProductsPage extends BasePage {
   readonly allProductsCards: Locator;
@@ -23,8 +24,13 @@ export class ProductsPage extends BasePage {
   async goToProduct() {}
 
   async searchProduct(productName: string): Promise<void> {
+    await StepLogger.step(`Search for product: "${productName}"`, async () => {
+    StepLogger.debug(`Filling search input with: ${productName}`);
     await this.searchInput.fill(productName);
+
+    StepLogger.debug('Clicking search submit button');
     await this.submitSearchtBtn.click();
+    })
   }
   async productSearchResult(productName: string):Promise<Locator> {
     return this.page.locator(

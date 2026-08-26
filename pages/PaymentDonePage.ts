@@ -1,5 +1,7 @@
 import {Page, Locator} from '@playwright/test'
 import { BasePage } from './base/BasePage';
+import { StepLogger } from '../utils/stepLogger';
+
 
 export class PaymentDonePage extends BasePage {
     readonly successh2Msg:Locator;
@@ -13,6 +15,7 @@ export class PaymentDonePage extends BasePage {
     }
 
     async getSuccessh2Msg():Promise<string>{
+    return await StepLogger.step('Fetch order placement success message', async () => {
         return this.successh2Msg.innerText();
-    }
+    })}
 }

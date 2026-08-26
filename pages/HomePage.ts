@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
-import { BasePage } from './base/BasePage.ts';
+import { BasePage } from './base/BasePage';
+import { StepLogger } from '../utils/stepLogger';
 
 export class HomePage extends BasePage {
   // Navigation
@@ -48,24 +49,43 @@ export class HomePage extends BasePage {
   }
 
   async goToSignupLogin(): Promise<void> {
+    await StepLogger.step('Navigate to Signup / Login page', async () => {
+      StepLogger.debug('Clicking Signup / Login button');
     await this.signupLoginBtn.click();
+    })
   }
 
   async goToContactUs(): Promise<void> {
+    await StepLogger.step('Navigate to Contact Us page', async () => {
+      StepLogger.debug('Clicking Contact Us button');
     await this.contactUsBtn.click();
+    })
   }
 
   async goToProducts(): Promise<void> {
+    await StepLogger.step('Navigate to Products page', async () => {
+      StepLogger.debug('Clicking Products button');
     await this.productsBtn.click();
+    }) 
   }
 
   async deleteAccount(): Promise<void> {
+    await StepLogger.step('Delete Account', async () => {
+      StepLogger.debug('Clicking Delete Account button');
     await this.deleteAccBtn.click();
+    })
   }
 
   async subscribe(email: string): Promise<void> {
+    await StepLogger.step(`Subscribe to newsletter with email: ${email}`, async () => {
+    
+      StepLogger.debug('Scrolling to footer');
     this.page.locator('footer').scrollIntoViewIfNeeded();
+
+    StepLogger.debug(`Filling subscription email: ${email}`);
     await this.subscriptionInput.fill(email);
+    
+    StepLogger.debug('Clicking subscribe button');
     await this.submitSubscriptionBtn.click();
-  }
+  })}
 }
