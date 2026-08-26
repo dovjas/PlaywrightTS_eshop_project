@@ -1,5 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './base/BasePage';
+import { StepLogger } from '../utils/stepLogger';
+
 
 interface CardDetails {
   cardName: string;
@@ -31,18 +33,27 @@ export class PaymentPage extends BasePage {
   }
 
   async enterCardDetails(card: CardDetails): Promise<void> {
+    await StepLogger.step('Enter credit card payment details', async () => {
+      StepLogger.debug('Filling payment form details')
     await this.nameOnCardInput.fill(card.cardName);
     await this.cardNumberInput.fill(card.cardNumber);
     await this.cvcInput.fill(card.cvc);
     await this.expirationInput.fill(card.month);
     await this.yearInput.fill(card.year);
+  })
   }
 
   async getSuccessMsg(): Promise<string> {
-    return this.successMsg.innerText();
+    return StepLogger.step(`Fetch payment success message text`, async()=>{
+      StepLogger.debug(`Success message text retrieved`);
+      return this.successMsg.innerText();
+    });
   }
 
   async payAndConfirmOrder(): Promise<void> {
+    await StepLogger.step('Click Pay and Confirm Order button', async () => {
+      StepLogger.debug('Clicking Pay and Confirm Order');
     await this.confirmOrderBtn.click();
+    })
   }
 }

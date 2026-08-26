@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from '../base/BasePage';
+import { StepLogger } from '../../utils/stepLogger';
 
 export interface NewUserData {
   email: string;
@@ -64,14 +65,21 @@ export class SignupFormPage extends BasePage {
   }
 
   async completeRegistration(userData: NewUserData): Promise<void> {
-    await this.selectTitle(userData.title);
-    await this.passwordInput.fill(userData.password);
-    await this.fillDoB(userData);
-    await this.handleCheckboxes();
-    await this.fillPersonalInfo(userData);
-    await this.fillAddressInfo(userData)
+    StepLogger.step(
+      `Complete registration form for: ${userData.email}`,
+      async () => {
+        await this.selectTitle(userData.title);
+        StepLogger.debug('Filling user password');
+        await this.passwordInput.fill(userData.password);
+        await this.fillDoB(userData);
+        await this.handleCheckboxes();
+        await this.fillPersonalInfo(userData);
+        await this.fillAddressInfo(userData);
 
-    await this.createAccountBtn.click();
+        StepLogger.debug('Clicking Create Account button');
+        await this.createAccountBtn.click();
+      },
+    );
   }
 
   private async selectTitle(title?: 'Mr' | 'Mrs'): Promise<void> {
@@ -83,6 +91,9 @@ export class SignupFormPage extends BasePage {
   }
 
   private async fillDoB(userData: NewUserData): Promise<void> {
+    StepLogger.debug(
+      `Selecting DoB: ${userData.dobDay}/${userData.dobMonth}/${userData.dobYear}`,
+    );
     if (userData.dobDay)
       await this.dateOfBirthDaySel.selectOption({ label: userData.dobDay });
     if (userData.dobMonth)
@@ -91,18 +102,22 @@ export class SignupFormPage extends BasePage {
       await this.dateOfBirthYearSel.selectOption({ label: userData.dobYear });
   }
 
-  private async handleCheckboxes():Promise<void> {
+  private async handleCheckboxes(): Promise<void> {
     await this.newsletterCbox.check();
     await this.specOffersCbox.check();
   }
 
-  private async fillPersonalInfo(userData: NewUserData):Promise<void> {
+  private async fillPersonalInfo(userData: NewUserData): Promise<void> {
+    StepLogger.debug(
+      `Filling personal info: ${userData.firstName} ${userData.lastName}`,
+    );
     await this.firstNameInput.fill(userData.firstName);
     await this.lastNameInput.fill(userData.lastName);
     await this.addressInput.fill(userData.address);
   }
 
-  private async fillAddressInfo(userData: NewUserData):Promise<void> {
+  private async fillAddressInfo(userData: NewUserData): Promise<void> {
+    StepLogger.debug(`Filling address info: ${userData.country}`);
     await this.countrySel.selectOption({ label: userData.country });
     if (userData.state) await this.stateInput.fill(userData.state);
     if (userData.city) await this.cityInput.fill(userData.city);

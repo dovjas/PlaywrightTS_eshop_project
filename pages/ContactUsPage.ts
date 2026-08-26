@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './base/BasePage';
+import { StepLogger } from '../utils/stepLogger';
 
 export interface ContactFormData {
   name: string;
@@ -34,13 +35,17 @@ export class ContactUsPage extends BasePage {
   }
 
   async submitContactForm(data:ContactFormData):Promise<void> {
-    await this.nameInput.fill(data.name);
-    await this.emailInput.fill(data.email);
-    await this.subjectInput.fill(data.subject);
-    await this.msgTextArea.fill(data.message);
-
-    this.page.once('dialog', (dialog) => dialog.accept());
-    await this.submitBtn.click();
+    await StepLogger.step(`Submit contact form`,async()=>{
+      StepLogger.debug(`Filling contact form data`)
+      await this.nameInput.fill(data.name);
+      await this.emailInput.fill(data.email);
+      await this.subjectInput.fill(data.subject);
+      await this.msgTextArea.fill(data.message);
+  
+      this.page.once('dialog', (dialog) => dialog.accept());
+      StepLogger.debug(`Clicking submit form`);
+      await this.submitBtn.click();
+    })
   }
 
   async acceptAlert():Promise<void> {

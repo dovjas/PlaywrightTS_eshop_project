@@ -1,4 +1,6 @@
 import { Locator, Page } from '@playwright/test';
+import { BasePage } from './base/BasePage';
+import {StepLogger} from '../utils/stepLogger';
 
 interface ProductItem{
   name:string,
@@ -9,18 +11,17 @@ interface ProductItem{
 }
 
 
-export class CartPage {
-  page: Page;
-  productNameTxt: Locator;
-  productCategoryTxt: Locator;
-  productPriceTxt: Locator;
-  productQuantityTxt: Locator;
-  totalPriceTxt:Locator;
-  proceedToCheckoutBtn: Locator;
-  //constructor
+export class CartPage extends BasePage {
+  readonly productNameTxt: Locator;
+  readonly productCategoryTxt: Locator;
+  readonly productPriceTxt: Locator;
+  readonly productQuantityTxt: Locator;
+  readonly totalPriceTxt:Locator;
+  readonly proceedToCheckoutBtn: Locator;
 
   constructor(page: Page) {
-    this.page=page;
+    super(page)
+
     this.productNameTxt = page.getByRole('link', { name: `Lace Top For Women` });
     this.productCategoryTxt = page.locator('.cart_description p');
     this.productPriceTxt = page.locator('.cart_price p');
@@ -29,13 +30,15 @@ export class CartPage {
     this.proceedToCheckoutBtn = page.locator('a.check_out');
     
   }
-  async getCartDetails() {
-   return {
-      name : await this.productNameTxt.innerText(),
-      category : await this.productCategoryTxt.innerText(),
-      price : await this.productPriceTxt.innerText(),
-      quantity : await this.productQuantityTxt.innerText(),
-      totalPrice : await this.totalPriceTxt.innerText(),
-    }
+  async getCartDetails():Promise<ProductItem> {
+    return await StepLogger.step(`Fetch cart row details for`, async()=>{
+      return {
+         name : await this.productNameTxt.innerText(),
+         category : await this.productCategoryTxt.innerText(),
+         price : await this.productPriceTxt.innerText(),
+         quantity : await this.productQuantityTxt.innerText(),
+         totalPrice : await this.totalPriceTxt.innerText(),
+       }
+    });
   }
 }

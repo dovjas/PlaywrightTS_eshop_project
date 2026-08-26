@@ -8,7 +8,7 @@
     "allure:open": "npx allure open allure-report",
     "allure:serve": "npx allure serve allure-results",
     "test:allure": "npm run test || npm run allure:generate && npm run allure:open",
-    "test:signup": "npx playwright test --grep @signup --headed",
+    "test:signup": "npx playwright test --grep @signup",
     "test:login": "npx playwright test --grep @login",
     "test:loginInvalid": "npx playwright test --grep @loginInvalid",
     "test:logout": "npx playwright test --grep @logout",
@@ -17,7 +17,7 @@
     "test:searchProduct": "npx playwright test --grep @searchProduct",
     "test:subscribe": "npx playwright test --grep @subscribe",
     "test:addToCart": "npx playwright test --grep @addToCart",
-    "test:placeOrder": "npx playwright test --grep @placeOrder --headed"
+    "test:placeOrder": "npx playwright test --grep @placeOrder"
   },
   "keywords": [
     "pw",

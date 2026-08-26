@@ -1,5 +1,14 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from './base/BasePage';
+import { StepLogger } from '../utils/stepLogger';
+
+export interface AddressData {
+  fullName: string;
+  street: string;
+  fullAddress: string;
+  country: string;
+  phone: string;
+}
 
 export class CheckoutPage extends BasePage {
   readonly addressFullName: Locator;
@@ -9,7 +18,6 @@ export class CheckoutPage extends BasePage {
   readonly addressPhone: Locator;
   readonly placeOrderBtn: Locator;
 
-  //constructor
   constructor(page: Page) {
     super(page);
 
@@ -28,18 +36,24 @@ export class CheckoutPage extends BasePage {
     this.placeOrderBtn = page.getByRole('link', { name: 'Place Order' });
   }
 
-  async getAddressData():Promise<void> {
-    const address = {
-      fullName: await this.addressFullName.innerText(),
-      street: await this.addressStreet.innerText(),
-      fullAddress: await this.addressCityStatePostcode.innerText(),
-      country: await this.addressCountry.innerText(),
-      phone: await this.addressPhone.innerText(),
-    };
-    console.log('Address: ', address);
+  async getAddressData(): Promise<AddressData> {
+    return await StepLogger.step(`'Fetch delivery address details`, async () => {
+      const address = {
+        fullName: await this.addressFullName.innerText(),
+        street: await this.addressStreet.innerText(),
+        fullAddress: await this.addressCityStatePostcode.innerText(),
+        country: await this.addressCountry.innerText(),
+        phone: await this.addressPhone.innerText(),
+      };
+      StepLogger.debug('Fetched delivery address details', address);
+      return address;
+    });
   }
 
-  async placeOrder():Promise<void> {
-    await this.placeOrderBtn.click();
+  async placeOrder(): Promise<void> {
+    StepLogger.step(`Click place order button`, async()=>{
+      StepLogger.debug('Clicking Place Order button');
+      await this.placeOrderBtn.click();
+    })
   }
 }
