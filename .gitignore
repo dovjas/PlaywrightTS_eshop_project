@@ -9,4 +9,4 @@ allure-results/
 allure-report/
 /playwright/.cache/
 /playwright/.auth/
-/logs/
+logs/
