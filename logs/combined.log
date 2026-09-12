@@ -2492,3 +2492,415 @@
 {"level":"info","message":"[STEP START] Delete Account","service":"playwright-e2e","timestamp":"2026-08-27 10:01:49"}
 {"level":"debug","message":"Clicking Delete Account button","service":"playwright-e2e","timestamp":"2026-08-27 10:01:49"}
 {"level":"info","message":"[STEP PASSED] Delete Account","service":"playwright-e2e","timestamp":"2026-08-27 10:01:51"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:16:41"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:16:41"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:16:51"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:16:51"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:16:51"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-08-27 10:16:51"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:16:56"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:16:58"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:16:58"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-08-27 10:16:58"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-08-27 10:16:58"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:16:59"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:16:59"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:00"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-08-27 10:17:02"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:04"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:04"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-08-27 10:17:04"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:06"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:07"}
+{"level":"info","message":"[STEP START] Navigate to Contact Us page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:08"}
+{"level":"debug","message":"Clicking Contact Us button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:08"}
+{"level":"info","message":"[STEP PASSED] Navigate to Contact Us page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:11"}
+{"level":"info","message":"[STEP START] Submit contact form","service":"playwright-e2e","timestamp":"2026-08-27 10:17:11"}
+{"level":"debug","message":"Filling contact form data","service":"playwright-e2e","timestamp":"2026-08-27 10:17:11"}
+{"level":"debug","message":"Clicking submit form","service":"playwright-e2e","timestamp":"2026-08-27 10:17:12"}
+{"level":"info","message":"[STEP PASSED] Submit contact form","service":"playwright-e2e","timestamp":"2026-08-27 10:17:12"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:18"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:25"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:25"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:26"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:26"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:26"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:26"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-08-27 10:17:26"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:27"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:29"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:33"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"info","message":"[STEP START] Login with email: fail@invaliduser.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-08-27 10:17:39"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:40"}
+{"level":"info","message":"[STEP PASSED] Login with email: fail@invaliduser.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:40"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:42"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:46"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:46"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:46"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:46"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:47"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:47"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-08-27 10:17:47"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:47"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:17:49"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:56"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:59"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:17:59"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:17:59"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:17:59"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:00"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:00"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-08-27 10:18:00"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:01"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:03"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:03"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:03"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:06"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-08-27 10:18:07"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-08-27 10:18:07"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:07"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-08-27 10:18:10"}
+{"level":"info","message":"[STEP START] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-08-27 10:18:11"}
+{"level":"info","message":"[STEP PASSED] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-08-27 10:18:12"}
+{"level":"info","message":"[STEP START] 'Fetch delivery address details","service":"playwright-e2e","timestamp":"2026-08-27 10:18:13"}
+{"country":"India","fullAddress":"Deli Kataran 1441","fullName":"Mr. Rimas Grimas","level":"debug","message":"Fetched delivery address details","phone":"0420012889","service":"playwright-e2e","street":"Lakunu street","timestamp":"2026-08-27 10:18:13"}
+{"level":"info","message":"[STEP PASSED] 'Fetch delivery address details","service":"playwright-e2e","timestamp":"2026-08-27 10:18:13"}
+{"level":"info","message":"[STEP START] Click place order button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:13"}
+{"level":"debug","message":"Clicking Place Order button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:13"}
+{"level":"info","message":"[STEP START] Enter credit card payment details","service":"playwright-e2e","timestamp":"2026-08-27 10:18:13"}
+{"level":"debug","message":"Filling payment form details","service":"playwright-e2e","timestamp":"2026-08-27 10:18:13"}
+{"level":"info","message":"[STEP PASSED] Click place order button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:15"}
+{"level":"info","message":"[STEP PASSED] Enter credit card payment details","service":"playwright-e2e","timestamp":"2026-08-27 10:18:16"}
+{"level":"info","message":"[STEP START] Click Pay and Confirm Order button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:16"}
+{"level":"debug","message":"Clicking Pay and Confirm Order","service":"playwright-e2e","timestamp":"2026-08-27 10:18:16"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:16"}
+{"level":"info","message":"[STEP PASSED] Click Pay and Confirm Order button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:18"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:20"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:20"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:21"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:21"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:21"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:22"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:30"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:30"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:30"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:30"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:31"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-08-27 10:18:32"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-08-27 10:18:32"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:32"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-08-27 10:18:35"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:36"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:39"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:39"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"info","message":"[STEP START] New user signup: email+1787815114790+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"debug","message":"Filling name input","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"debug","message":"Filling email input","service":"playwright-e2e","timestamp":"2026-08-27 10:18:40"}
+{"level":"debug","message":"Clicking signup button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:41"}
+{"level":"info","message":"[STEP PASSED] New user signup: email+1787815114790+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:41"}
+{"level":"info","message":"[STEP START] Complete registration form for: email+1787815114790+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:42"}
+{"level":"debug","message":"Filling user password","service":"playwright-e2e","timestamp":"2026-08-27 10:18:42"}
+{"level":"debug","message":"Selecting DoB: 9/April/1990","service":"playwright-e2e","timestamp":"2026-08-27 10:18:42"}
+{"level":"debug","message":"Filling personal info: Rimas Grimas","service":"playwright-e2e","timestamp":"2026-08-27 10:18:44"}
+{"level":"debug","message":"Filling address info: India","service":"playwright-e2e","timestamp":"2026-08-27 10:18:45"}
+{"level":"debug","message":"Clicking Create Account button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:45"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:46"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-08-27 10:18:46"}
+{"level":"info","message":"[STEP START] Subscribe to newsletter with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:46"}
+{"level":"debug","message":"Scrolling to footer","service":"playwright-e2e","timestamp":"2026-08-27 10:18:46"}
+{"level":"debug","message":"Filling subscription email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:46"}
+{"level":"debug","message":"Clicking subscribe button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:46"}
+{"level":"info","message":"[STEP PASSED] Subscribe to newsletter with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:47"}
+{"level":"info","message":"[STEP PASSED] Complete registration form for: email+1787815114790+@test.com","service":"playwright-e2e","timestamp":"2026-08-27 10:18:47"}
+{"level":"info","message":"[STEP START] 'Click Continue button on Account Created page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:48"}
+{"level":"debug","message":"Clicking continue button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:48"}
+{"level":"info","message":"[STEP PASSED] 'Click Continue button on Account Created page","service":"playwright-e2e","timestamp":"2026-08-27 10:18:49"}
+{"level":"info","message":"[STEP START] Delete Account","service":"playwright-e2e","timestamp":"2026-08-27 10:18:50"}
+{"level":"debug","message":"Clicking Delete Account button","service":"playwright-e2e","timestamp":"2026-08-27 10:18:50"}
+{"level":"info","message":"[STEP PASSED] Delete Account","service":"playwright-e2e","timestamp":"2026-08-27 10:18:54"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:23:52"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:23:52"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:03"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:03"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:04"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:04"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:04"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:04"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:05"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:05"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:07"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:07"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-09 11:24:08"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-09-09 11:24:08"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:08"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-09 11:24:08"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:09"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:10"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-09 11:24:11"}
+{"level":"info","message":"[STEP START] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-09 11:24:14"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:14"}
+{"level":"info","message":"[STEP PASSED] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-09 11:24:15"}
+{"level":"info","message":"[STEP START] Navigate to Contact Us page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:15"}
+{"level":"debug","message":"Clicking Contact Us button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:15"}
+{"level":"info","message":"[STEP PASSED] Navigate to Contact Us page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:16"}
+{"level":"info","message":"[STEP START] Submit contact form","service":"playwright-e2e","timestamp":"2026-09-09 11:24:17"}
+{"level":"debug","message":"Filling contact form data","service":"playwright-e2e","timestamp":"2026-09-09 11:24:17"}
+{"level":"debug","message":"Clicking submit form","service":"playwright-e2e","timestamp":"2026-09-09 11:24:17"}
+{"level":"info","message":"[STEP PASSED] Submit contact form","service":"playwright-e2e","timestamp":"2026-09-09 11:24:18"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:26"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:28"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:30"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:30"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:31"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:31"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:33"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:33"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-09 11:24:33"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:33"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:33"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:34"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:34"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:34"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:35"}
+{"level":"info","message":"[STEP START] Login with email: fail@invaliduser.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:35"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-09 11:24:35"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:35"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:36"}
+{"level":"info","message":"[STEP PASSED] Login with email: fail@invaliduser.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:36"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:40"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:41"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:45"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:45"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:45"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:45"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:46"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:47"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-09 11:24:47"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:48"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:48"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:48"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:48"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:48"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:49"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:50"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-09 11:24:50"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:50"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:51"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:24:53"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:54"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:54"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:24:56"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:24:57"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-09 11:24:58"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-09-09 11:24:58"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-09-09 11:24:58"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-09 11:25:00"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:03"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:03"}
+{"level":"info","message":"[STEP START] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-09 11:25:03"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:04"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:04"}
+{"level":"info","message":"[STEP PASSED] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-09 11:25:04"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:06"}
+{"level":"info","message":"[STEP START] 'Fetch delivery address details","service":"playwright-e2e","timestamp":"2026-09-09 11:25:06"}
+{"country":"India","fullAddress":"Deli Kataran 1441","fullName":"Mr. Rimas Grimas","level":"debug","message":"Fetched delivery address details","phone":"0420012889","service":"playwright-e2e","street":"Lakunu street","timestamp":"2026-09-09 11:25:07"}
+{"level":"info","message":"[STEP PASSED] 'Fetch delivery address details","service":"playwright-e2e","timestamp":"2026-09-09 11:25:07"}
+{"level":"info","message":"[STEP START] Click place order button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:07"}
+{"level":"debug","message":"Clicking Place Order button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:07"}
+{"level":"info","message":"[STEP START] Enter credit card payment details","service":"playwright-e2e","timestamp":"2026-09-09 11:25:07"}
+{"level":"debug","message":"Filling payment form details","service":"playwright-e2e","timestamp":"2026-09-09 11:25:07"}
+{"level":"info","message":"[STEP PASSED] Click place order button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:11"}
+{"level":"info","message":"[STEP PASSED] Enter credit card payment details","service":"playwright-e2e","timestamp":"2026-09-09 11:25:12"}
+{"level":"info","message":"[STEP START] Click Pay and Confirm Order button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:12"}
+{"level":"debug","message":"Clicking Pay and Confirm Order","service":"playwright-e2e","timestamp":"2026-09-09 11:25:12"}
+{"level":"info","message":"[STEP PASSED] Click Pay and Confirm Order button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:14"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:16"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:18"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:20"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:20"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:20"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:20"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:22"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-09 11:25:23"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-09-09 11:25:23"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:23"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:24"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:24"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:24"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:24"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-09 11:25:25"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:26"}
+{"level":"info","message":"[STEP START] New user signup: email+1788942225930+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:26"}
+{"level":"debug","message":"Filling name input","service":"playwright-e2e","timestamp":"2026-09-09 11:25:26"}
+{"level":"debug","message":"Filling email input","service":"playwright-e2e","timestamp":"2026-09-09 11:25:27"}
+{"level":"debug","message":"Clicking signup button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:27"}
+{"level":"info","message":"[STEP PASSED] New user signup: email+1788942225930+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:28"}
+{"level":"info","message":"[STEP START] Complete registration form for: email+1788942225930+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:28"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:29"}
+{"level":"debug","message":"Filling user password","service":"playwright-e2e","timestamp":"2026-09-09 11:25:29"}
+{"level":"debug","message":"Selecting DoB: 9/April/1990","service":"playwright-e2e","timestamp":"2026-09-09 11:25:29"}
+{"level":"debug","message":"Filling personal info: Rimas Grimas","service":"playwright-e2e","timestamp":"2026-09-09 11:25:30"}
+{"level":"debug","message":"Filling address info: India","service":"playwright-e2e","timestamp":"2026-09-09 11:25:31"}
+{"level":"debug","message":"Clicking Create Account button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:32"}
+{"level":"info","message":"[STEP PASSED] Complete registration form for: email+1788942225930+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:33"}
+{"level":"info","message":"[STEP START] 'Click Continue button on Account Created page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:35"}
+{"level":"debug","message":"Clicking continue button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:35"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:36"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-09 11:25:36"}
+{"level":"info","message":"[STEP START] Subscribe to newsletter with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:36"}
+{"level":"debug","message":"Scrolling to footer","service":"playwright-e2e","timestamp":"2026-09-09 11:25:36"}
+{"level":"debug","message":"Filling subscription email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:36"}
+{"level":"debug","message":"Clicking subscribe button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:36"}
+{"level":"info","message":"[STEP PASSED] Subscribe to newsletter with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-09 11:25:37"}
+{"level":"info","message":"[STEP PASSED] 'Click Continue button on Account Created page","service":"playwright-e2e","timestamp":"2026-09-09 11:25:37"}
+{"level":"info","message":"[STEP START] Delete Account","service":"playwright-e2e","timestamp":"2026-09-09 11:25:38"}
+{"level":"debug","message":"Clicking Delete Account button","service":"playwright-e2e","timestamp":"2026-09-09 11:25:38"}
+{"level":"info","message":"[STEP PASSED] Delete Account","service":"playwright-e2e","timestamp":"2026-09-09 11:25:41"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:24"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:24"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:05:32"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:05:34"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:05:34"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:05:34"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-11 08:05:34"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-11 08:05:35"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-09-11 08:05:35"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:05:35"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-09-11 08:05:36"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:05:38"}
+{"level":"info","message":"[STEP START] Navigate to Contact Us page","service":"playwright-e2e","timestamp":"2026-09-11 08:05:39"}
+{"level":"debug","message":"Clicking Contact Us button","service":"playwright-e2e","timestamp":"2026-09-11 08:05:39"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-11 08:05:39"}
+{"level":"info","message":"[STEP START] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-11 08:05:43"}
+{"level":"info","message":"[STEP PASSED] Navigate to Contact Us page","service":"playwright-e2e","timestamp":"2026-09-11 08:05:44"}
+{"level":"info","message":"[STEP PASSED] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-11 08:05:44"}
+{"level":"info","message":"[STEP START] Submit contact form","service":"playwright-e2e","timestamp":"2026-09-11 08:05:44"}
+{"level":"debug","message":"Filling contact form data","service":"playwright-e2e","timestamp":"2026-09-11 08:05:44"}
+{"level":"debug","message":"Clicking submit form","service":"playwright-e2e","timestamp":"2026-09-11 08:05:48"}
+{"level":"info","message":"[STEP PASSED] Submit contact form","service":"playwright-e2e","timestamp":"2026-09-11 08:05:48"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:51"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:05:59"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:00"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:00"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:00"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:00"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:02"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:03"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-11 08:06:03"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:06"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:08"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:08"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:09"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:09"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:09"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:10"}
+{"level":"info","message":"[STEP START] Login with email: fail@invaliduser.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:12"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-11 08:06:12"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:14"}
+{"level":"info","message":"[STEP PASSED] Login with email: fail@invaliduser.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:17"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:22"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:23"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:29"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:29"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:29"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:29"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:29"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:29"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:30"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:30"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:30"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:30"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-11 08:06:31"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:32"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:32"}
+{"level":"info","message":"[STEP START] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:33"}
+{"level":"debug","message":"Filling login credentials","service":"playwright-e2e","timestamp":"2026-09-11 08:06:33"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:34"}
+{"level":"debug","message":"Clicking Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:34"}
+{"level":"info","message":"[STEP PASSED] Login with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:06:37"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:38"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:38"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:40"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-11 08:06:41"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:41"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-09-11 08:06:41"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:41"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-11 08:06:42"}
+{"level":"info","message":"[STEP START] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-11 08:06:47"}
+{"level":"info","message":"[STEP PASSED] Fetch cart row details for","service":"playwright-e2e","timestamp":"2026-09-11 08:06:48"}
+{"level":"info","message":"[STEP START] 'Fetch delivery address details","service":"playwright-e2e","timestamp":"2026-09-11 08:06:51"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"country":"India","fullAddress":"Deli Kataran 1441","fullName":"Mr. Rimas Grimas","level":"debug","message":"Fetched delivery address details","phone":"0420012889","service":"playwright-e2e","street":"Lakunu street","timestamp":"2026-09-11 08:06:52"}
+{"level":"info","message":"[STEP PASSED] 'Fetch delivery address details","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"info","message":"[STEP START] Click place order button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"debug","message":"Clicking Place Order button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"info","message":"[STEP START] Enter credit card payment details","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"debug","message":"Filling payment form details","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:52"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:06:55"}
+{"level":"info","message":"[STEP PASSED] Click place order button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:55"}
+{"level":"info","message":"[STEP PASSED] Enter credit card payment details","service":"playwright-e2e","timestamp":"2026-09-11 08:06:59"}
+{"level":"info","message":"[STEP START] Click Pay and Confirm Order button","service":"playwright-e2e","timestamp":"2026-09-11 08:06:59"}
+{"level":"debug","message":"Clicking Pay and Confirm Order","service":"playwright-e2e","timestamp":"2026-09-11 08:06:59"}
+{"level":"info","message":"[STEP PASSED] Click Pay and Confirm Order button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:02"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:09"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:11"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:16"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:16"}
+{"level":"info","message":"[STEP START] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:07:16"}
+{"level":"debug","message":"Clicking Products button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:16"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:17"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:17"}
+{"level":"info","message":"[STEP START] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:07:17"}
+{"level":"info","message":"[STEP PASSED] Navigate to Products page","service":"playwright-e2e","timestamp":"2026-09-11 08:07:17"}
+{"level":"debug","message":"Clicking Signup / Login button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:17"}
+{"level":"info","message":"[STEP START] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-11 08:07:18"}
+{"level":"debug","message":"Filling search input with: Lace Top For Women","service":"playwright-e2e","timestamp":"2026-09-11 08:07:18"}
+{"level":"debug","message":"Clicking search submit button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:19"}
+{"level":"info","message":"[STEP PASSED] Navigate to Signup / Login page","service":"playwright-e2e","timestamp":"2026-09-11 08:07:19"}
+{"level":"info","message":"[STEP START] New user signup: email+1789103120618+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:19"}
+{"level":"debug","message":"Filling name input","service":"playwright-e2e","timestamp":"2026-09-11 08:07:19"}
+{"level":"debug","message":"Filling email input","service":"playwright-e2e","timestamp":"2026-09-11 08:07:20"}
+{"level":"info","message":"[STEP PASSED] Search for product: \"Lace Top For Women\"","service":"playwright-e2e","timestamp":"2026-09-11 08:07:20"}
+{"level":"debug","message":"Clicking signup button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:20"}
+{"level":"info","message":"[STEP PASSED] New user signup: email+1789103120618+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:21"}
+{"level":"info","message":"[STEP START] Complete registration form for: email+1789103120618+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:21"}
+{"level":"debug","message":"Filling user password","service":"playwright-e2e","timestamp":"2026-09-11 08:07:22"}
+{"level":"debug","message":"Selecting DoB: 9/April/1990","service":"playwright-e2e","timestamp":"2026-09-11 08:07:22"}
+{"level":"debug","message":"Filling personal info: Rimas Grimas","service":"playwright-e2e","timestamp":"2026-09-11 08:07:23"}
+{"level":"info","message":"[STEP START] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:23"}
+{"level":"debug","message":"Filling address info: India","service":"playwright-e2e","timestamp":"2026-09-11 08:07:24"}
+{"level":"debug","message":"Clicking Create Account button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:26"}
+{"level":"info","message":"[STEP PASSED] Complete registration form for: email+1789103120618+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:30"}
+{"level":"debug","message":"[BasePage] Successfully navigated to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:30"}
+{"level":"info","message":"[STEP PASSED] [BasePage] Navigating to: https://www.automationexercise.com//","service":"playwright-e2e","timestamp":"2026-09-11 08:07:30"}
+{"level":"info","message":"[STEP START] Subscribe to newsletter with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:31"}
+{"level":"debug","message":"Scrolling to footer","service":"playwright-e2e","timestamp":"2026-09-11 08:07:31"}
+{"level":"debug","message":"Filling subscription email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:31"}
+{"level":"info","message":"[STEP START] 'Click Continue button on Account Created page","service":"playwright-e2e","timestamp":"2026-09-11 08:07:31"}
+{"level":"debug","message":"Clicking continue button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:31"}
+{"level":"debug","message":"Clicking subscribe button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:32"}
+{"level":"info","message":"[STEP PASSED] Subscribe to newsletter with email: email+1783927188631+@test.com","service":"playwright-e2e","timestamp":"2026-09-11 08:07:32"}
+{"level":"info","message":"[STEP PASSED] 'Click Continue button on Account Created page","service":"playwright-e2e","timestamp":"2026-09-11 08:07:33"}
+{"level":"info","message":"[STEP START] Delete Account","service":"playwright-e2e","timestamp":"2026-09-11 08:07:34"}
+{"level":"debug","message":"Clicking Delete Account button","service":"playwright-e2e","timestamp":"2026-09-11 08:07:34"}
+{"level":"info","message":"[STEP PASSED] Delete Account","service":"playwright-e2e","timestamp":"2026-09-11 08:07:39"}
