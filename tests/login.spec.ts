@@ -31,4 +31,14 @@ test('Test Case 2: Login User with correct email and password @login', async ({
     await expect(homePage.loggedInAsTxt).toBeVisible();
     await expect(homePage.loggedInAsTxt).toContainText(testUser.validLoginUser.firstName);
   });
+
+    await test.step('Step 7. Logout user', async () => {
+      await homePage.logoutBtn.click();
+    });
+
+    await test.step('Step 8. Verify that user is navigated to login page', async () => {
+      expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+        'Login to your account',
+      );
+    });
 });

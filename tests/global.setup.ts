@@ -1,4 +1,4 @@
-import { test as setup, expect } from '../fixtures/pomFixtures';
+import { test as setup, expect } from '../fixtures/pomFixtures.ts';
 import { testUser } from '../testData/users.ts';
 
 setup('Global - Signup auth', async ({ page, homePage, signupLoginPage }) => {

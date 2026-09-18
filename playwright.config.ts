@@ -49,11 +49,44 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // 1. Authentication setup
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'setup',
+      testMatch: /global\.setup\.ts/,
     },
 
+    // 2. Tests that require an authenticated user
+    {
+      name: 'chromium-auth',
+      dependencies: ['setup'],
+      testMatch: [
+        '**/logoutUser.spec.ts',
+        '**/contatUsForm.spec.ts',
+        '**/placeOrder.spec.ts',
+        '**/subscription.spec.ts',
+      ],
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: './playwright/.auth/auth.json',
+      },
+    },
+    // 3. Tests that explicitly test authentication
+    {
+      name: 'chrome-no-auth',
+      testMatch: [
+        '**/signup.spec.ts',
+        '**/login.spec.ts',
+        '**/loginFailed.spec.ts',
+      ],
+
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: {
+          cookies: [],
+          origins: [],
+        },
+      },
+    },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },

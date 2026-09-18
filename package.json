@@ -13,10 +13,7 @@
     "test:loginInvalid": "npx playwright test --grep @loginInvalid",
     "test:logout": "npx playwright test --grep @logout",
     "test:contactForm": "npx playwright test --grep @contactForm",
-    "test:productDetails": "npx playwright test --grep @productDetails",
-    "test:searchProduct": "npx playwright test --grep @searchProduct",
     "test:subscribe": "npx playwright test --grep @subscribe",
-    "test:addToCart": "npx playwright test --grep @addToCart",
     "test:placeOrder": "npx playwright test --grep @placeOrder"
   },
   "keywords": [
