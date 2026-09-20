@@ -1,7 +1,7 @@
-import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users';
-import { productData } from '../testData/product';
-import { paymentCard } from '../testData/paymentCard';
+import { test, expect } from '../../../src/fixtures/pomFixtures';
+import { testUser } from '../../../testData/users';
+import { productData } from '../../../testData/product';
+import { paymentCard } from '../../../testData/paymentCard';
 
 test('Test Case 9: Place Order @placeOrder', async ({
   page,

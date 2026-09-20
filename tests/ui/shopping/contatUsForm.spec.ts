@@ -1,5 +1,5 @@
-import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users';
+import { test, expect } from '../../../src/fixtures/pomFixtures';
+import { testUser } from '../../../testData/users';
 
 const contactFormData = {
   name: 'Janas',

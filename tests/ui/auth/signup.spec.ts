@@ -1,5 +1,5 @@
-import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users.ts';
+import { test, expect } from '../../../src/fixtures/pomFixtures';
+import { testUser } from '../../../testData/users.ts';
 
 test('Test Case 1: Register User @signup', async ({
   page,
@@ -47,7 +47,8 @@ test('Test Case 1: Register User @signup', async ({
   await test.step('Step 8. Verify that "ACCOUNT CREATED!" is visible', async () => {
     await page.waitForURL('**/account_created', { timeout: 15000 });
     await expect(accountCreatedPage.accountCreatedTxt).toContainText(
-      'Account Created!',{ignoreCase:true}
+      'Account Created!',
+      { ignoreCase: true },
     );
     await accountCreatedPage.clickContinue();
   });
@@ -61,8 +62,6 @@ test('Test Case 1: Register User @signup', async ({
 
   await test.step('Step 10. Verify that "ACCOUNT DELETED!" is visible and click "Continue" button', async () => {
     await homePage.deleteAccount();
-    await expect(homePage.accDeletedTxt).toContainText(
-      'Account Deleted!',
-    );
+    await expect(homePage.accDeletedTxt).toContainText('Account Deleted!');
   });
 });

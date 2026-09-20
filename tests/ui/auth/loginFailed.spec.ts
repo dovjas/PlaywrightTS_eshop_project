@@ -1,8 +1,10 @@
-import { test, expect } from '../fixtures/pomFixtures';
-import { testUser } from '../testData/users.ts';
+import { test, expect } from '../../../src/fixtures/pomFixtures';
+import { testUser } from '../../../testData/users.ts';
 
 test('Test Case 3: Login User with correct email and password @loginInvalid', async ({
-  page,homePage,signupLoginPage
+  page,
+  homePage,
+  signupLoginPage,
 }) => {
   await test.step('1. Navigate to Home Page', async () => {
     await homePage.navigate('/');

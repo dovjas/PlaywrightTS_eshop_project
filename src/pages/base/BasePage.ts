@@ -35,9 +35,9 @@ export abstract class BasePage {
 
   private consentHandler(): void {
     this.page.addLocatorHandler(this.consentBtn, async () => {
-     StepLogger.debug(
-       '[BasePage] Consent banner detected. Dismissing automatically...',
-     );
+      StepLogger.debug(
+        '[BasePage] Consent banner detected. Dismissing automatically...',
+      );
       await this.consentBtn.click();
     });
   }
