@@ -1,12 +1,6 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
-import { testUser } from '../../../test-data/users.ts';
+import {contactFormData} from '../../../test-data/contactForm';
 
-const contactFormData = {
-  name: 'Janas',
-  email: 'janas@test.lt',
-  subject: 'Testing subject',
-  message: 'This is a testing message',
-};
 
 test('Test Case 8: Contact Us Form @contactForm', async ({
   page,
