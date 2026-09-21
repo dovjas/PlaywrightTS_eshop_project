@@ -4,7 +4,7 @@ import { SignupLoginPage } from '../pages/auth/SignupLoginPage';
 import { SignupFormPage } from '../pages/auth/SignupFormPage';
 import { AccountCreatedPage } from '../pages/auth/AccountCreatedPage';
 import { ProductsPage } from '../pages/ProductsPage';
-import { ProductDetail } from '../pages/ProductDetail';
+import { ProductDetail } from '../pages/ProductDetailPage';
 import { ContactUsPage } from '../pages/ContactUsPage';
 import { CartPage } from '../pages/CartPage';
 import { CheckoutPage } from '../pages/CheckoutPage';
