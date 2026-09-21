@@ -1,5 +1,5 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
-import { testUser } from '../../../testData/users';
+import { testUser } from '../../../test-data/users.ts';
 
 const contactFormData = {
   name: 'Janas',

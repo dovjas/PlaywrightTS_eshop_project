@@ -14,7 +14,7 @@
     "test:logout": "npx playwright test --grep @logout",
     "test:contactForm": "npx playwright test --grep @contactForm",
     "test:subscribe": "npx playwright test --grep @subscribe",
-    "test:placeOrder": "npx playwright test --grep @placeOrder"
+    "test:placeOrder": "npx playwright test --grep @e2e"
   },
   "keywords": [
     "pw",

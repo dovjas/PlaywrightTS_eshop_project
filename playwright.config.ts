@@ -52,7 +52,7 @@ export default defineConfig({
       testMatch: [
         '**/logoutUser.spec.ts',
         '**/contatUsForm.spec.ts',
-        '**/placeOrder.spec.ts',
+        '**/e2e.spec.ts',
         '**/subscription.spec.ts',
       ],
       use: {

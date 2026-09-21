@@ -1,4 +1,4 @@
-import { NewUserData } from '../pages/auth/SignupFormPage.ts';
+import { NewUserData } from '../src/pages/auth/SignupFormPage';
 
 
 export const testUser = {

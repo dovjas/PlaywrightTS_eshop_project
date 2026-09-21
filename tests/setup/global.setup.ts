@@ -1,5 +1,5 @@
-import { test as setup, expect } from '../../../src/fixtures/pomFixtures';
-import { testUser } from '../../../testData/users.ts';
+import { test as setup, expect } from '../../src/fixtures/pomFixtures';
+import { testUser } from '../../test-data/users';
 
 setup('Global - Signup auth', async ({ page, homePage, signupLoginPage }) => {
   await setup.step('Step 1: Navigate to Home Page', async () => {
