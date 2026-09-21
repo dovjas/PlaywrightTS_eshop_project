@@ -1,44 +1,72 @@
-import {test, expect} from '../../../src/fixtures/pomFixtures';
+import { test, expect } from '../../../src/fixtures/pomFixtures';
 import { testUser } from '../../../test-data/users.ts';
 
-test('Test Case 2: Login User with correct email and password @login', async ({
-  page,
-  homePage,
-  signupLoginPage
-}) => {
-  await test.step('Step 1: Navigate to Home Page', async () => {
-    await homePage.navigate('/');
-  });
-  await test.step('Step 2: Verify that home page is visible successfully', async () => {
-    await expect(page).toHaveURL(/automationexercise.com/);
-    await expect(homePage.productCards.first()).toBeVisible();
-  });
-  await test.step('Step 3: Go to Signup/Login page', async () => {
-    await homePage.goToSignupLogin();
-  });
-  await test.step('Step 4: Verify "Login to your account" is visible', async () => {
-    await expect(signupLoginPage.loginHeaderTxt).toContainText(
-      'Login to your account',
-    );
-  });
-  await test.step('Step 5. Login using Email and Password ', async () => {
-    await signupLoginPage.userLogin(
-      testUser.validLoginUser.email,
-      testUser.validLoginUser.password,
-    );
-  });
-  await test.step('Step 6. Verify that "Logged in as username" is visible', async () => {
-    await expect(homePage.loggedInAsTxt).toBeVisible();
-    await expect(homePage.loggedInAsTxt).toContainText(testUser.validLoginUser.firstName);
+test.describe('Login tests', () => {
+  test.beforeEach(async ({ page, homePage }) => {
+    await test.step('Navigate to Home Page', async () => {
+      await homePage.navigate('/');
+    });
+
+    await test.step('Verify that Home Page is visible', async () => {
+      await expect(page).toHaveURL(/automationexercise.com/);
+      await expect(homePage.productCards.first()).toBeVisible();
+    });
+
+    await test.step('Go to Signup/Login page', async () => {
+      await homePage.goToSignupLogin();
+    });
   });
 
-    await test.step('Step 7. Logout user', async () => {
+  test('Test Case 1: should login successfully using valid credentials @login', async ({
+    homePage,
+    signupLoginPage,
+  }) => {
+    await test.step('Verify "Login to your account" is visible', async () => {
+      await expect(signupLoginPage.loginHeaderTxt).toContainText(
+        'Login to your account',
+      );
+    });
+    await test.step('Step 5. Login using Email and Password ', async () => {
+      await signupLoginPage.userLogin(
+        testUser.validLoginUser.email,
+        testUser.validLoginUser.password,
+      );
+    });
+    await test.step('Verify that user is logged in', async () => {
+      await expect(homePage.loggedInAsTxt).toContainText(
+        testUser.validLoginUser.firstName,
+      );
+    });
+
+    await test.step('Logout user', async () => {
       await homePage.logoutBtn.click();
     });
 
-    await test.step('Step 8. Verify that user is navigated to login page', async () => {
+    await test.step('Verify that user is navigated to login page', async () => {
       expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
         'Login to your account',
       );
     });
+  });
+
+  test('Test Case 2: should display error for invalid credentials @loginFailed', async ({
+    signupLoginPage,
+  }) => {
+    await test.step('Verify "Login to your account" is visible', async () => {
+      await expect(signupLoginPage.loginHeaderTxt).toContainText(
+        'Login to your account',
+      );
+    });
+    await test.step('Login using invalid Email and Password ', async () => {
+      await signupLoginPage.userLogin(
+        testUser.invalidLoginUser.email,
+        testUser.invalidLoginUser.password,
+      );
+    });
+    await test.step('Verify login error message', async () => {
+      await expect(signupLoginPage.invalidLoginErrMsg).toContainText(
+        'Your email or password is incorrect!',
+      );
+    });
+  });
 });
