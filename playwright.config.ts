@@ -8,7 +8,6 @@ dotenv.config({
   path: `./.env.${testEnv}`,
 });
 
-
 export default defineConfig({
   timeout: 60000,
   testDir: './tests',
@@ -81,6 +80,14 @@ export default defineConfig({
           cookies: [],
           origins: [],
         },
+      },
+    },
+    //4 API tests
+    {
+      name: 'api',
+      testMatch: '**/api/**/*.spec.ts',
+      use: {
+        baseURL: process.env.API_BASE_URL,
       },
     },
     // {
