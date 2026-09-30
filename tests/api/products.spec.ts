@@ -1,4 +1,5 @@
 import { test, expect } from '../../src/fixtures/apiFixture';
+import { productData } from '../../test-data/api/product';
 
 test.describe('Products API', () => {
   test('should return a non-empty products list', async ({ productsApi }) => {
@@ -15,11 +16,11 @@ test.describe('Products API', () => {
     );
 
     const blueTop = products.products.find(
-      (product) => product.name === 'Blue Top',
+      (product) => product.name === productData.name,
     );
     expect(blueTop).toMatchObject({
-      name: 'Blue Top',
-      brand: 'Polo',
+      name: productData.name,
+      brand: productData.brand,
     });
   });
 });
