@@ -1,4 +1,5 @@
 import { test, expect } from '../../src/fixtures/apiFixture';
+import { productData } from '../../test-data/api/product';
 
 test.describe('Search product', () => {
   test('should return searched product', async ({ searchProductApi }) => {
@@ -8,11 +9,11 @@ test.describe('Search product', () => {
     expect(search.products).not.toHaveLength(0);
 
     const blueTop = search.products.find(
-      (product) => product.name === 'Blue Top',
+      (product) => product.name ===  productData.name,
     );
     expect(blueTop).toMatchObject({
-      name: 'Blue Top',
-      brand: 'Polo',
+      name: productData.name,
+      brand: productData.brand,
     });
   });
 });
