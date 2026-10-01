@@ -69,9 +69,9 @@ export default defineConfig({
     {
       name: 'chrome-no-auth',
       testMatch: [
-        '**/signup.spec.ts',
-        '**/login.spec.ts',
-        '**/loginFailed.spec.ts',
+        '**/ui/signup.spec.ts',
+        '**/ui/login.spec.ts',
+        '**/ui/loginFailed.spec.ts',
       ],
 
       use: {
