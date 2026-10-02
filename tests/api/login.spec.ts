@@ -1,4 +1,5 @@
 import { test, expect } from '../../src/fixtures/apiFixture';
+import { loginResponseSchema } from '../../src/schemas/api/login.schema';
 
 const email = process.env.TEST_USER_EMAIL;
 const password = process.env.TEST_USER_PASSWORD;
@@ -12,6 +13,7 @@ test.describe('Login API test', () => {
     loginApi,
   }) => {
     const response = await loginApi.login(email, password);
+    loginResponseSchema.parse(response)
     expect(response.responseCode).toBe(200);
     expect(response.message).toBe('User exists!');
   });
