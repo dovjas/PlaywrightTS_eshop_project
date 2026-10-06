@@ -1,17 +1,6 @@
-export interface Product {
-  id: number;
-  name: string;
-  price: string;
-  brand: string;
-  category: {
-    usertype: {
-      usertype: string;
-    };
-    category: string;
-  };
-}
+import {z} from 'zod'
+import { poductSchema, productResponseSchema } from "../../schemas/api/product.schema";
 
-export interface ProductsResponse {
-  responseCode: number;
-  products: Product[];
-}
+export type Product = z.infer<typeof poductSchema>
+export type ProductsResponse = z.infer<typeof productResponseSchema>
+
