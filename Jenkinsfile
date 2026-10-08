@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        API_BASE_URL = 'https://automationexercise.com'
+    }
+
     stages {
         stage('Install dependencies') {
             steps {
