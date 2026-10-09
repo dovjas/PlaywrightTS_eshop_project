@@ -34,6 +34,10 @@ pipeline {
     }
      post {
         always {
+             // Generate and publish the Allure report
+            allure([
+                results: [[path: 'allure-results']]
+            ])
             publishHTML(target: [
                 reportName: 'Playwright HTML Report',
                 reportDir: 'playwright-report',
@@ -42,6 +46,12 @@ pipeline {
                 alwaysLinkToLastBuild: true,
                 allowMissing: true
             ])
+
+                // Archive test diagnostics and raw Allure results
+            archiveArtifacts(
+                artifacts: 'test-results/**/*,allure-results/**/*',
+                allowEmptyArchive: true
+            )
         }
     }
 }
