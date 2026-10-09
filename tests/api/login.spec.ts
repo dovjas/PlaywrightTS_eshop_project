@@ -13,6 +13,7 @@ test.describe('Login API test', () => {
     loginApi,
   }) => {
     const response = await loginApi.login(email, password);
+    console.log('Login Response', response);
     loginResponseSchema.parse(response);
     expect(response.responseCode).toBe(200);
     expect(response.message).toBe('User exists!');

@@ -1,5 +1,5 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
-import { testUser } from '../../../test-data/users.ts';
+import { testUser } from '../../../test-data/users';
 
 test('Test Case 9: Verify Subscription in home page @subscribe', async ({
   page,

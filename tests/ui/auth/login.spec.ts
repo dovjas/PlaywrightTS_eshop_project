@@ -1,5 +1,5 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
-import { testUser } from '../../../test-data/users.ts';
+import { testUser } from '../../../test-data/users';
 
 test.describe('Login tests', () => {
   test.beforeEach(async ({ page, homePage }) => {

@@ -1,7 +1,7 @@
-import { test, expect } from '../../../src/fixtures/pomFixtures.ts';
-import { testUser } from '../../../test-data/users.ts';
-import { productData } from '../../../test-data/product.ts';
-import { paymentCard } from '../../../test-data/paymentCard.ts';
+import { test, expect } from '../../../src/fixtures/pomFixtures';
+import { testUser } from '../../../test-data/users';
+import { productData } from '../../../test-data/product';
+import { paymentCard } from '../../../test-data/paymentCard';
 
 test('Test Case 9: Place Order @e2e', async ({
   page,
