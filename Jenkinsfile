@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    options {
+        buildDiscarder(logRotator(
+            numToKeepStr: '30',
+            artifactNumToKeepStr: '15'
+        ))
+    }
+
+
     environment {
         API_BASE_URL = 'https://automationexercise.com'
     }
