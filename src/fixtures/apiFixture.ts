@@ -3,11 +3,13 @@ import { BaseApiClient } from '../api/base/BaseApiClient';
 import { ProductsApi } from '../../tests/api/services/ProductsApi';
 import { SearchProductApi } from '../../tests/api/services/SearchProductApi';
 import { LoginApi } from '../../tests/api/services/LoginApi';
+import { BrandsListApi } from '../../tests/api/services/BrandsListApi';
 
 type ApiFixture = {
   productsApi: ProductsApi;
   searchProductApi: SearchProductApi;
   loginApi: LoginApi;
+  brandsListApi: BrandsListApi;
 };
 
 export const test = baseTest.extend<ApiFixture>({
@@ -25,6 +27,11 @@ export const test = baseTest.extend<ApiFixture>({
     const apiClient = new BaseApiClient(request);
     await use(new LoginApi(apiClient));
   },
+
+  brandsListApi:async({request},use)=>{
+    const apiClient = new BaseApiClient(request);
+    await use(new BrandsListApi(apiClient));
+  }
 });
 
 export { expect };
