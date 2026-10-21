@@ -9,19 +9,25 @@ if (!email || !password) {
 }
 
 test.describe('Login API test', () => {
-  test('should login successfully with valid credentials', async ({
-    loginApi,
-  }) => {
-    const response = await loginApi.login(email, password);
-    console.log('Login Response', response);
-    loginResponseSchema.parse(response);
-    expect(response.responseCode).toBe(200);
-    expect(response.message).toBe('User exists!');
-  });
-  test('should reject login with invalid password', async ({ loginApi }) => {
-    const invalidPw = 'invalidPw.123';
-    const response = await loginApi.login(email, invalidPw);
-    expect(response.responseCode).toBe(404);
-    expect(response.message).toBe('User not found!');
-  });
+  test(
+    'should login successfully with valid credentials',
+    { tag: ['@api', '@smoke'] },
+    async ({ loginApi }) => {
+      const response = await loginApi.login(email, password);
+      console.log('Login Response', response);
+      loginResponseSchema.parse(response);
+      expect(response.responseCode).toBe(200);
+      expect(response.message).toBe('User exists!');
+    },
+  );
+  test(
+    'should reject login with invalid password',
+    { tag: '@api' },
+    async ({ loginApi }) => {
+      const invalidPw = 'invalidPw.123';
+      const response = await loginApi.login(email, invalidPw);
+      expect(response.responseCode).toBe(404);
+      expect(response.message).toBe('User not found!');
+    },
+  );
 });

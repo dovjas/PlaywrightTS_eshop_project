@@ -2,7 +2,7 @@ import { test, expect } from '../../src/fixtures/apiFixture';
 import { productData } from '../../test-data/api/product';
 
 test.describe('Search product', () => {
-  test('should return searched product', async ({ searchProductApi }) => {
+  test('should return searched product',{tag:'@api'} ,async ({ searchProductApi }) => {
     const search = await searchProductApi.searchProduct('Blue Top');
 
     expect(search.responseCode).toBe(200);
