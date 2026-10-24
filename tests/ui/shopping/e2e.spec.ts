@@ -3,87 +3,91 @@ import { testUser } from '../../../test-data/users';
 import { productData } from '../../../test-data/product';
 import { paymentCard } from '../../../test-data/paymentCard';
 
-test('Test Case 9: Place Order @e2e', async ({
-  page,
-  homePage,
-  productsPage,
-  cartPage,
-  checkoutPage,
-  paymentPage,
-  paymentDonePage,
-}) => {
-  await test.step('1. Navigate to Home Page', async () => {
-    await homePage.navigate('/');
-  });
-  await test.step('2. Verify that home page is visible successfully', async () => {
-    await expect(page).toHaveURL(/automationexercise.com/);
-    await expect(homePage.productCards.first()).toBeVisible();
-  });
-  await test.step('Step 6. Verify that "Logged in as username" is visible', async () => {
-    await expect(homePage.loggedInAsTxt).toBeVisible();
-    await expect(homePage.loggedInAsTxt).toContainText(
-      testUser.validLoginUser.firstName,
-    );
-  });
-  await test.step('3. Go to "Products" page', async () => {
-    await homePage.goToProducts();
-  });
-  await test.step('4. Verify user is navigated to "ALL PRODUCTS" page successfully', async () => {
-    await expect(page).toHaveURL(/automationexercise\.com\/products/);
-  });
-  await test.step('Step 5. The products list is visible', async () => {
-    await expect(productsPage.allProductsCards.first()).toBeVisible();
-  });
-  await test.step('Step 6. Enter product name in click search button', async () => {
-    await productsPage.searchProduct(productData.name);
-  });
-  await test.step('Step 7. Verify "SEARCHED PRODUCT" is visible', async () => {
-    const result = (
-      await productsPage.productSearchResult(productData.name)
-    ).first();
-    await expect(result).toBeVisible();
-  });
+test(
+  'Test Case 9: Place Order',
+  { tag: ['@ui','@smoke'] },
+  async ({
+    page,
+    homePage,
+    productsPage,
+    cartPage,
+    checkoutPage,
+    paymentPage,
+    paymentDonePage,
+  }) => {
+    await test.step('1. Navigate to Home Page', async () => {
+      await homePage.navigate('/');
+    });
+    await test.step('2. Verify that home page is visible successfully', async () => {
+      await expect(page).toHaveURL(/automationexercise.com/);
+      await expect(homePage.productCards.first()).toBeVisible();
+    });
+    await test.step('Step 6. Verify that "Logged in as username" is visible', async () => {
+      await expect(homePage.loggedInAsTxt).toBeVisible();
+      await expect(homePage.loggedInAsTxt).toContainText(
+        testUser.validLoginUser.firstName,
+      );
+    });
+    await test.step('3. Go to "Products" page', async () => {
+      await homePage.goToProducts();
+    });
+    await test.step('4. Verify user is navigated to "ALL PRODUCTS" page successfully', async () => {
+      await expect(page).toHaveURL(/automationexercise\.com\/products/);
+    });
+    await test.step('Step 5. The products list is visible', async () => {
+      await expect(productsPage.allProductsCards.first()).toBeVisible();
+    });
+    await test.step('Step 6. Enter product name in click search button', async () => {
+      await productsPage.searchProduct(productData.name);
+    });
+    await test.step('Step 7. Verify "SEARCHED PRODUCT" is visible', async () => {
+      const result = (
+        await productsPage.productSearchResult(productData.name)
+      ).first();
+      await expect(result).toBeVisible();
+    });
 
-  await test.step('Step 8.  Verify all the products related to search are visible', async () => {
-    const results = await productsPage.productSearchResult(
-      testUser.validLoginUser.productName,
-    );
-    const count = await results.count();
-    await expect(count).toBeGreaterThan(0);
-    console.log(`Found ${await count} products for ${productData.name}`);
-  });
-  await test.step('Step 9. Hover over first product and click "Add to cart"', async () => {
-    await productsPage.addToCart();
-  });
-  await test.step('Step 10. Verify product is added to Cart"', async () => {
-    await productsPage.viewCart();
-  });
+    await test.step('Step 8.  Verify all the products related to search are visible', async () => {
+      const results = await productsPage.productSearchResult(
+        testUser.validLoginUser.productName,
+      );
+      const count = await results.count();
+      await expect(count).toBeGreaterThan(0);
+      console.log(`Found ${await count} products for ${productData.name}`);
+    });
+    await test.step('Step 9. Hover over first product and click "Add to cart"', async () => {
+      await productsPage.addToCart();
+    });
+    await test.step('Step 10. Verify product is added to Cart"', async () => {
+      await productsPage.viewCart();
+    });
 
-  await test.step('Step 11. Verify product price, quantity and total price"', async () => {
-    const actual = await cartPage.getCartDetails();
+    await test.step('Step 11. Verify product price, quantity and total price"', async () => {
+      const actual = await cartPage.getCartDetails();
 
-    expect(actual.name).toContain(productData.name);
-    expect(actual.category).toContain(productData.category);
-    expect(actual.price).toContain(productData.price);
-    expect(actual.quantity).toContain(productData.quantity);
-    expect(actual.totalPrice).toContain(productData.totalPrice);
-  });
+      expect(actual.name).toContain(productData.name);
+      expect(actual.category).toContain(productData.category);
+      expect(actual.price).toContain(productData.price);
+      expect(actual.quantity).toContain(productData.quantity);
+      expect(actual.totalPrice).toContain(productData.totalPrice);
+    });
 
-  await test.step('Step 11: Verify Address Details', async () => {
-    await cartPage.proceedToCheckoutBtn.click();
-    await checkoutPage.getAddressData();
-  });
-  await test.step('Step 12: Place order', async () => {
-    await checkoutPage.placeOrder();
-  });
-  await test.step('Step 13: Pay and confirm order', async () => {
-    await paymentPage.enterCardDetails(paymentCard);
-    await paymentPage.payAndConfirmOrder();
-    // expect(await paymentPage.getSuccessMsg()).toContain(
-    //   'Your order has been placed successfully!',
-    // );
-  });
-  await test.step('Step 14:Verify if order has been confirmed', async () => {
-    await expect(paymentDonePage.successh2Msg).toContainText('Order Placed!');
-  });
-});
+    await test.step('Step 11: Verify Address Details', async () => {
+      await cartPage.proceedToCheckoutBtn.click();
+      await checkoutPage.getAddressData();
+    });
+    await test.step('Step 12: Place order', async () => {
+      await checkoutPage.placeOrder();
+    });
+    await test.step('Step 13: Pay and confirm order', async () => {
+      await paymentPage.enterCardDetails(paymentCard);
+      await paymentPage.payAndConfirmOrder();
+      // expect(await paymentPage.getSuccessMsg()).toContain(
+      //   'Your order has been placed successfully!',
+      // );
+    });
+    await test.step('Step 14:Verify if order has been confirmed', async () => {
+      await expect(paymentDonePage.successh2Msg).toContainText('Order Placed!');
+    });
+  },
+);

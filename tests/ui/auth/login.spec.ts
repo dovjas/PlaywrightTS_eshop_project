@@ -1,7 +1,7 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
 import { testUser } from '../../../test-data/users';
 
-test.describe('Login tests', () => {
+test.describe('Login tests',{tag:['@ui']}, () => {
   test.beforeEach(async ({ page, homePage }) => {
     await test.step('Navigate to Home Page', async () => {
       await homePage.navigate('/');
@@ -17,7 +17,7 @@ test.describe('Login tests', () => {
     });
   });
 
-  test('Test Case 1: should login successfully using valid credentials @login', async ({
+  test('Test Case 1: should login successfully using valid credentials' ,async ({
     homePage,
     signupLoginPage,
   }) => {
