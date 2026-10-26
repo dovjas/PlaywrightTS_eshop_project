@@ -13,7 +13,7 @@ export const poductSchema = z.object({
   }),
 });
 
-export const productsResponseSchema = z.object({
+export const productResponseSchema = z.object({
   responseCode: z.number(),
   products: z.array(poductSchema),
 });

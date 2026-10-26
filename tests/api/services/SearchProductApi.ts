@@ -1,6 +1,6 @@
 import { BaseApiClient } from '../../../src/api/base/BaseApiClient';
 import { ProductsResponse } from '../../../src/types/api/products';
-import { productsResponseSchema } from '../../../src/schemas/api/product.schema';
+import { productResponseSchema } from '../../../src/schemas/api/product.schema';
 
 export class SearchProductApi {
   constructor(private readonly apiClient: BaseApiClient) {}
@@ -12,6 +12,6 @@ export class SearchProductApi {
         search_product: searchTerm,
       },
     );
-    return productsResponseSchema.parse(response);
+    return productResponseSchema.parse(response);
   }
 }

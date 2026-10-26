@@ -65,7 +65,7 @@ export class SignupFormPage extends BasePage {
   }
 
   async completeRegistration(userData: NewUserData): Promise<void> {
-    StepLogger.step(
+    await StepLogger.step(
       `Complete registration form for: ${userData.email}`,
       async () => {
         await this.selectTitle(userData.title);
