@@ -19,6 +19,6 @@ test('Test Case 9: Verify Subscription in home page @subscribe', async ({
     await homePage.subscribe(testUser.validLoginUser.email);
   });
   await test.step('Step 5:  Verify success message "You have been successfully subscribed!" is visible', async () => {
-    expect(await homePage.subscriptionSuccessTxt).toBeVisible();
+    await expect(homePage.subscriptionSuccessTxt).toBeVisible();
   });
 });
