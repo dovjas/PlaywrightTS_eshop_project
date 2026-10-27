@@ -20,6 +20,12 @@ pipeline {
                 bat 'npx playwright install chromium'
             }
         }
+        
+        stage('Type check') {
+            steps {
+                bat 'npx tsc --noEmit'
+            }
+        }
 
         stage('Run tests') {
             steps {
