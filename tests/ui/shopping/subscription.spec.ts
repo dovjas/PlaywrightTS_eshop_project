@@ -1,7 +1,7 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
 import { testUser } from '../../../test-data/users';
 
-test('Test Case 9: Verify Subscription in home page',{tag:['@ui']}, async ({
+test('Test Case 9: Verify Subscription in home page',{tag:['@ui', '@subscribe']}, async ({
   page,
   homePage,
 }) => {
