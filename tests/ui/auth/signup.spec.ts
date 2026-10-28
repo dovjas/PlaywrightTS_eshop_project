@@ -22,7 +22,7 @@ test('Test Case 1: Register User',{tag:['@ui']}, async ({
   });
 
   await test.step('Step 4. Verify "New User Signup!" is visible', async () => {
-    expect(await signupLoginPage.newUserHeaderTxt.textContent()).toContain(
+    await expect(signupLoginPage.newUserHeaderTxt).toContainText(
       'New User Signup!',
     );
   });
@@ -35,7 +35,7 @@ test('Test Case 1: Register User',{tag:['@ui']}, async ({
   });
 
   await test.step('Step 6. Verify that "ENTER ACCOUNT INFORMATION" is visible', async () => {
-    expect(await signupFormPage.headerTxt.textContent()).toContain(
+    await expect(signupFormPage.headerTxt).toContainText(
       'Enter Account Information',
     );
   });

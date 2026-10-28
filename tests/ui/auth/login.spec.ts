@@ -43,7 +43,7 @@ test.describe('Login tests',{tag:['@ui']}, () => {
     });
 
     await test.step('Verify that user is navigated to login page', async () => {
-      expect(await signupLoginPage.loginHeaderTxt.textContent()).toContain(
+      await expect(signupLoginPage.loginHeaderTxt).toContainText(
         'Login to your account',
       );
     });

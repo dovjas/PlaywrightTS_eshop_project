@@ -54,12 +54,7 @@ export default defineConfig({
     {
       name: 'chromium-auth',
       dependencies: ['setup'],
-      testMatch: [
-        '**/logoutUser.spec.ts',
-        '**/contatUsForm.spec.ts',
-        '**/e2e.spec.ts',
-        '**/subscription.spec.ts',
-      ],
+      testMatch: ['**/logoutUser.spec.ts', '**/e2e.spec.ts'],
       use: {
         ...devices['Desktop Chrome'],
         storageState: './playwright/.auth/auth.json',
@@ -71,6 +66,8 @@ export default defineConfig({
       testMatch: [
         '**/ui/auth/signup.spec.ts',
         '**/ui/auth/login.spec.ts',
+        '**/contatUsForm.spec.ts',
+        '**/subscription.spec.ts',
       ],
 
       use: {
