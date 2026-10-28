@@ -1,7 +1,7 @@
 import { test, expect } from '../../../src/fixtures/pomFixtures';
 import { testUser } from '../../../test-data/users';
 
-test.describe('Login tests',{tag:['@ui']}, () => {
+test.describe('Login tests',{tag:['@ui','@login']}, () => {
   test.beforeEach(async ({ page, homePage }) => {
     await test.step('Navigate to Home Page', async () => {
       await homePage.navigate('/');

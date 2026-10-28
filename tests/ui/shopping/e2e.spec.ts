@@ -5,7 +5,7 @@ import { paymentCard } from '../../../test-data/paymentCard';
 
 test(
   'Test Case 9: Place Order',
-  { tag: ['@ui','@smoke'] },
+  { tag: ['@ui','@e2e'] },
   async ({
     page,
     homePage,
