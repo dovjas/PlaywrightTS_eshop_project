@@ -12,7 +12,7 @@
     "test:login": "npx playwright test --grep @login",
     "test:loginFailed": "npx playwright test --grep @loginFailed",
     "test:logout": "npx playwright test --grep @logout",
-    "test:contactForm": "npx playwright test --grep @contactForm",
+    "test:contactForm": "npx playwright test --grep @contactUsForm",
     "test:subscribe": "npx playwright test --grep @subscribe",
     "test:placeOrder": "npx playwright test --grep @e2e",
     "test_dev:login": "cross-env TEST_ENV=dev npx playwright test --grep @login"

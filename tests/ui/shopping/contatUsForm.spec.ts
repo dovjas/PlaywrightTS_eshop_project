@@ -4,7 +4,7 @@ import {contactFormData} from '../../../test-data/contactForm';
 
 test(
   'Test Case 8: Contact Us Form',
-  { tag: ['@ui'] },
+  { tag: ['@ui','@contactUsForm'] },
   async ({ page, homePage, contactUsPage }) => {
     await test.step('Step 1. Navigate to Home Page', async () => {
       await homePage.navigate('/');
@@ -24,12 +24,14 @@ test(
     });
 
     await test.step('9.  Enter name, email, subject and message', async () => {
-      await contactUsPage.submitContactForm(contactFormData);
+      // await contactUsPage.submitContactForm(contactFormData);
+      const dialogMessage = await contactUsPage.submitContactForm(contactFormData);
+      expect(dialogMessage).toBe('Press OK to proceed!');
     });
 
-    await test.step('Step 10: Accept alert', async () => {
-      await contactUsPage.acceptAlert();
-    });
+    // await test.step('Step 10: Accept alert', async () => {
+    //   await contactUsPage.acceptAlert();
+    // });
 
     await test.step('Step 11: Verify success message', async () => {
       await expect(contactUsPage.submitSuccessTxt).toBeVisible();
