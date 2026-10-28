@@ -28,9 +28,9 @@ export class HomePage extends BasePage {
     super(page);
 
     // Navigation
-    this.signupLoginBtn = page.getByRole('link', {name: /Signup \/ Login/i });
-    this.logoutBtn = page.getByRole('link',{name:'Logout'});
-    this.deleteAccBtn = page.getByRole('link',{name:'Delete Account'});
+    this.signupLoginBtn = page.getByRole('link', { name: /Signup \/ Login/i });
+    this.logoutBtn = page.getByRole('link', { name: 'Logout' });
+    this.deleteAccBtn = page.getByRole('link', { name: 'Delete Account' });
     this.contactUsBtn = page.getByRole('link', { name: 'Contact us' });
     this.productsBtn = page.getByRole('link', { name: 'Products' });
     this.cartBtn = page.getByRole('link', { name: 'Cart' });
@@ -51,41 +51,44 @@ export class HomePage extends BasePage {
   async goToSignupLogin(): Promise<void> {
     await StepLogger.step('Navigate to Signup / Login page', async () => {
       StepLogger.debug('Clicking Signup / Login button');
-    await this.signupLoginBtn.click();
-    })
+      await this.signupLoginBtn.click();
+    });
   }
 
   async goToContactUs(): Promise<void> {
     await StepLogger.step('Navigate to Contact Us page', async () => {
       StepLogger.debug('Clicking Contact Us button');
-    await this.contactUsBtn.click();
-    })
+      await this.contactUsBtn.click();
+    });
   }
 
   async goToProducts(): Promise<void> {
     await StepLogger.step('Navigate to Products page', async () => {
       StepLogger.debug('Clicking Products button');
-    await this.productsBtn.click();
-    }) 
+      await this.productsBtn.click();
+    });
   }
 
   async deleteAccount(): Promise<void> {
     await StepLogger.step('Delete Account', async () => {
       StepLogger.debug('Clicking Delete Account button');
-    await this.deleteAccBtn.click();
-    })
+      await this.deleteAccBtn.click();
+    });
   }
 
   async subscribe(email: string): Promise<void> {
-    await StepLogger.step(`Subscribe to newsletter with email: ${email}`, async () => {
-    
-      StepLogger.debug('Scrolling to footer');
-    this.page.locator('footer').scrollIntoViewIfNeeded();
+    await StepLogger.step(
+      `Subscribe to newsletter with email: ${email}`,
+      async () => {
+        StepLogger.debug('Scrolling to footer');
+        await this.page.locator('footer').scrollIntoViewIfNeeded();
 
-    StepLogger.debug(`Filling subscription email: ${email}`);
-    await this.subscriptionInput.fill(email);
-    
-    StepLogger.debug('Clicking subscribe button');
-    await this.submitSubscriptionBtn.click();
-  })}
+        StepLogger.debug(`Filling subscription email: ${email}`);
+        await this.subscriptionInput.fill(email);
+
+        StepLogger.debug('Clicking subscribe button');
+        await this.submitSubscriptionBtn.click();
+      },
+    );
+  }
 }

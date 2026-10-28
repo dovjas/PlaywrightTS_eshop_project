@@ -4,10 +4,11 @@
   "description": "Playwight TS eshop project",
   "main": "index.js",
   "scripts": {
+    "test": "playwright test",
+    "test:allure": "npm run test && npm run allure:generate && npm run allure:open",
     "allure:generate": "npx allure generate allure-results --clean -o allure-report",
     "allure:open": "npx allure open allure-report",
     "allure:serve": "npx allure serve allure-results",
-    "test:allure": "npm run test || npm run allure:generate && npm run allure:open",
     "test:signup": "npx playwright test --grep @signup",
     "test:login": "npx playwright test --grep @login",
     "test:loginFailed": "npx playwright test --grep @loginFailed",
