@@ -34,24 +34,24 @@ export class ContactUsPage extends BasePage {
     this.submitSuccessTxt = page.locator('.contact-form .status');
   }
 
-  async submitContactForm(data:ContactFormData):Promise<void> {
-    await StepLogger.step(`Submit contact form`,async()=>{
+  async submitContactForm(data:ContactFormData):Promise<string> {
+    return await StepLogger.step(`Submit contact form`,async()=>{
       StepLogger.debug(`Filling contact form data`)
       await this.nameInput.fill(data.name);
       await this.emailInput.fill(data.email);
       await this.subjectInput.fill(data.subject);
       await this.msgTextArea.fill(data.message);
-  
-      this.page.once('dialog', (dialog) => dialog.accept());
-      StepLogger.debug(`Clicking submit form`);
-      await this.submitBtn.click();
-    })
-  }
 
-  async acceptAlert():Promise<void> {
-    this.page.once('dialog', (dialog) => {
-      console.log('Alert message:', dialog.message());
-      dialog.accept();
-    });
+      const dialogPromise = this.page.waitForEvent('dialog').then(async(dialog)=>{
+        const message = dialog.message();
+        await dialog.accept();
+        return message
+      });
+      
+      await this.submitBtn.click();
+      const message = await dialogPromise;
+      return message
+      
+    })
   }
 }
