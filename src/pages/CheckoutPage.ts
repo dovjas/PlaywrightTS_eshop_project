@@ -51,7 +51,7 @@ export class CheckoutPage extends BasePage {
   }
 
   async placeOrder(): Promise<void> {
-    StepLogger.step(`Click place order button`, async()=>{
+    await StepLogger.step(`Click place order button`, async()=>{
       StepLogger.debug('Clicking Place Order button');
       await this.placeOrderBtn.click();
     })
