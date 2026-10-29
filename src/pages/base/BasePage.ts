@@ -3,23 +3,19 @@ import { StepLogger } from '../../utils/stepLogger';
 
 export abstract class BasePage {
   protected page: Page;
-  protected readonly baseURL: string;
   protected readonly consentBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.baseURL = 'https://www.automationexercise.com/';
     this.consentBtn = page.getByRole('button', { name: 'Consent' });
-
     this.consentHandler();
     this.adBlockHandler();
   }
 
   async navigate(path: string = '/'): Promise<void> {
-    const url = path.startsWith('http') ? path : `${this.baseURL}${path}`;
-    await StepLogger.step(`[BasePage] Navigating to: ${url}`, async () => {
+    await StepLogger.step(`[BasePage] Navigating to: ${path}`, async () => {
       try {
-        await this.page.goto(url, {
+        await this.page.goto(path, {
           waitUntil: 'domcontentloaded',
         });
         await this.page.waitForLoadState();
@@ -27,7 +23,7 @@ export abstract class BasePage {
           `[BasePage] Successfully navigated to: ${this.page.url()}`,
         );
       } catch (err) {
-        StepLogger.debug(`[BasePage] Navigation failed to ${url}`);
+        StepLogger.debug(`[BasePage] Navigation failed to ${path}`);
         throw err;
       }
     });
