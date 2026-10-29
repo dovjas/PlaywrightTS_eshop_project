@@ -1,12 +1,18 @@
 import { NewUserData } from '../src/pages/auth/SignupFormPage';
 
-
 export const testUser = {
   validLoginUser: {
     email: process.env.TEST_USER_EMAIL!,
     password: process.env.TEST_USER_PASSWORD!,
     firstName: 'Rimas',
     productName: 'Lace Top For Women',
+    address: {
+      fullName: 'Mr. Rimas Grimas',
+      street: 'Lakunu street',
+      fullAddress: 'Deli Kataran 1441',
+      country: 'India',
+      phone: '0420012889',
+    },
   },
   invalidLoginUser: {
     email: 'fail@invaliduser.com',

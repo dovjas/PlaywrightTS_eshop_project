@@ -74,8 +74,10 @@ test(
 
     await test.step('Step 11: Verify Address Details', async () => {
       await cartPage.proceedToCheckoutBtn.click();
-      await checkoutPage.getAddressData();
+      const actualAddress = await checkoutPage.getAddressData();
+      expect(actualAddress).toEqual(testUser.validLoginUser.address);
     });
+
     await test.step('Step 12: Place order', async () => {
       await checkoutPage.placeOrder();
     });
