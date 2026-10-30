@@ -3,5 +3,5 @@ export const paymentCard = {
   cardNumber: '443311',
   cvc: '3300',
   month: '10',
-  year: '2024',
+  year: '2028',
 };
