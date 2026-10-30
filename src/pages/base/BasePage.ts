@@ -18,7 +18,7 @@ export abstract class BasePage {
         await this.page.goto(path, {
           waitUntil: 'domcontentloaded',
         });
-        await this.page.waitForLoadState();
+        // await this.page.waitForLoadState();
         StepLogger.debug(
           `[BasePage] Successfully navigated to: ${this.page.url()}`,
         );

@@ -21,8 +21,6 @@ export class ProductsPage extends BasePage {
     this.addToCartBtn = page.locator('.productinfo .add-to-cart');
   }
 
-  async goToProduct() {}
-
   async searchProduct(productName: string): Promise<void> {
     await StepLogger.step(`Search for product: "${productName}"`, async () => {
       StepLogger.debug(`Filling search input with: ${productName}`);
