@@ -26,6 +26,27 @@ type PageObjects = {
 };
 
 export const test = base.extend<PageObjects>({
+  page: async ({ page }, use) => {
+    const consentBtn = page.getByRole('button', { name: 'Consent' });
+
+    await page.addLocatorHandler(consentBtn, async (locator) => {
+      await locator.click();
+    });
+
+    const blockedUrlPatterns = [
+      '**/*google*/**',
+      '**/*doubleclick*/**',
+      '**/*adservice*/**',
+      '**/*pagead*/**',
+    ];
+
+    for (const pattern of blockedUrlPatterns) {
+      await page.route(pattern,(route) => route.abort());
+    }
+
+    await use(page);
+  },
+
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
   },
