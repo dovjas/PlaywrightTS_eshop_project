@@ -16,4 +16,14 @@ test.describe('Search product', () => {
       brand: productData.brand,
     });
   });
+  test(
+      'invalid product search',
+      { tag: '@api' },
+      async ({ searchProductApi }) => {
+        const search = await searchProductApi.searchProduct('Alfa');
+        console.log('Search is: ', search)
+        expect(search.responseCode).toBe(200);
+        expect(search.products).toHaveLength(0);
+      },
+    );
 });
