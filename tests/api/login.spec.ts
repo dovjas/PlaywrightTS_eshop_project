@@ -48,4 +48,23 @@ test.describe('Login API test', () => {
       });
     },
   );
+  test(
+    'should reject login with empty password.',
+    { tag: '@api' },
+    async ({ request }) => {
+      const response = await request.post('/api/verifyLogin', {
+        form: {
+          email: email,
+          password: '',
+        },
+      });
+      const body = await response.json();
+      expect(response.status()).toBe(200);
+      loginResponseSchema.parse(body);
+      expect(body).toEqual({
+        responseCode: 404,
+        message: 'User not found!',
+      });
+    },
+  );
 });
